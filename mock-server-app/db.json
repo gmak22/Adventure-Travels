@@ -1,0 +1,44 @@
+{
+    "register":[
+        {
+            "username":"admin",
+            "password":"admin",
+            "id": 1,
+            "email":"admin@gmail.com",
+            "gender":"male",
+            "description":"Web developer"
+        },
+         {
+            "username":"nirmal",
+            "password":"nirmal",
+            "id": 2,
+            "email":"nirmal@gmail.com",
+            "gender":"male",
+            "description":"Web developer"
+        },
+         {
+            "username":"ravitheja",
+            "password":"ravitheja",
+            "id": 3,
+            "email":"ravitheja@gmail.com",
+            "gender":"male",
+            "description":"Web developer"
+        },
+         {
+            "username":"anshul",
+            "password":"anshul",
+            "id": 4,
+            "email":"anshul@gmail.com",
+            "gender":"female",
+            "description":"Web developer"
+        },
+        {
+            "username":"sarita",
+            "password":"sarita",
+            "id": 5,
+            "email":"sarita@gmail.com",
+            "gender":"female",
+            "description":"Web developer"
+        }
+    ]
+}
