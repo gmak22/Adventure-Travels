@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
+        color: aliceblue;
+       
+    }
+    #main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 100px;
+        gap: 100px;
+       align-items: center;
+       justify-content: center;
+       width: 100%;
+
+    }
+    .main1{
+        border: 2px solid white;
+       font-size: 25px;
+       padding: 30px;
+       width: 700px;
+       margin-left: 50px;
+       color: whitesmoke ;
+       border-radius: 20px;
+       
+    }
+    .main2{
+        border: 2px solid black;
+        width: 90%;
+        height: 300px;
+        font-size: 30px;
+        margin-right: 100px;
+    }
+    .main1 input{
+        margin: 10px;
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        background-color: lightgray;
+        color: black;
+        border: 1px solid black;
+    }
+    .main1 button{
+        margin: 10px;
+        width: 100%;
+        height: 50px;
+        background-color: skyblue;
+        border-radius: 20px;
+        font-size: 20px;
+        margin-top: 30px;
+        color: azure;
+    }
+    .main1 button:hover{
+        color: black;
+        background-color: aqua;
+    }
+    .main1 .input-group {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .main1 .input-group label {
+        margin-right: 10px;
+        color: white;
+    }
+
+    .main1 .input-group input {
+        flex: 1;
+        height: 50px;
+        border-radius: 10px;
+    }
+    .sub{
+        display: flex;
+    }
+
+
+</style>
+<body>
+    <div id="main">
+
+    <div class="main1">
+        <h2> Booking Details </h2>
+    <span>Full Name:</span> <input type="text" placeholder="Enter Full Name Here"> <br>
+    <span>Email Id:</span> <input type="email" placeholder="Enter Email Id Here"> <br>
+    <span>Contact No.:</span> <input type="number" placeholder="Enter contact No. Here"> <br>
+   <div class="sub">
+    <div class="input-group">
+        <label for="age">Age:</label> <br>
+        <input type="number" id="age" placeholder="Enter Age Here">
+    </div>
+    <div class="input-group">
+        <label for="source-city">Source City:</label> <br>
+        <input type="text" id="source-city" placeholder="Enter City Name">
+    </div>
+   </div>
+    
+    
+    <button>Proceed to Checkout</button>
+    </div>
+
+    <div class="main2">
+        <h3>Your Selected Plan </h3>
+    </div>
+    </div>
+    
+</body>
+</html>
