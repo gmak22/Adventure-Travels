@@ -8,8 +8,8 @@
 <style>
     body{
         background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
-        color: aliceblue;
-       
+        color: black;
+
     }
     #main{
         display: grid;
@@ -19,6 +19,7 @@
        align-items: center;
        justify-content: center;
        width: 100%;
+       
 
     }
     .main1{
@@ -27,17 +28,16 @@
        padding: 30px;
        width: 700px;
        margin-left: 50px;
-       color: whitesmoke ;
+       color: black ;
        border-radius: 20px;
-       
+       background-color: rgba(162, 181, 220, 0.5);
+       color: #0a0909;
     }
-    .main2{
-        border: 2px solid black;
-        width: 90%;
-        height: 300px;
-        font-size: 30px;
-        margin-right: 100px;
-    }
+       .main1 h2{
+        text-align: center;
+       }
+    
+    
     .main1 input{
         margin: 10px;
         width: 100%;
@@ -55,7 +55,7 @@
         border-radius: 20px;
         font-size: 20px;
         margin-top: 30px;
-        color: azure;
+        color: black;
     }
     .main1 button:hover{
         color: black;
@@ -69,7 +69,7 @@
 
     .main1 .input-group label {
         margin-right: 10px;
-        color: white;
+        color: black;
     }
 
     .main1 .input-group input {
@@ -80,7 +80,15 @@
     .sub{
         display: flex;
     }
-
+    .main2 div{
+        border: 2px solid black;
+        width: 60%;
+        height: 300px;
+        font-size: 30px;
+        margin-right: 100px;
+        margin-top: 20px;
+        color: white;
+    }
 
 </style>
 <body>
@@ -107,9 +115,45 @@
     </div>
 
     <div class="main2">
-        <h3>Your Selected Plan </h3>
+
+        <div>
+        <h3>Apply Coupen Code Here</h3>
+       
+            <label for="coupon">Coupon Code:</label>
+            <input type="text" id="coupon" />
+            <button onclick="applyCoupon()">Apply Coupon</button>
+       
+            <p>Original Price: 100</p>
+            <p id="discountedPrice">Discounted Price: Rs100</p>
+  
+        </div>
+        <div>
+            <h3>Your Selected Plan </h3>
+        </div>
+        
     </div>
     </div>
     
 </body>
+
+<script>
+
+function applyCoupon() {
+  const couponCode = document.getElementById('coupon').value;
+  const originalPrice = 100; // Replace this with the original price
+  let discountedPrice = originalPrice;
+
+  
+  if (couponCode === 'ADVENTURE20') {
+    // Apply a 20% discount for this coupon
+    const discountPercentage = 20;
+    discountedPrice = originalPrice - (originalPrice * discountPercentage) / 100;
+  } 
+  else {
+    discountedPrice = originalPrice;
+  }
+
+  document.getElementById('discountedPrice').innerText = `Discounted Price: Rs${discountedPrice}`;
+}
+</script>
 </html>
