@@ -16,7 +16,7 @@
             <div class="toggle">
                 <div class="logo">
                     <img src="./saritaimage/logo-removebg-preview.png" alt="">
-                    <h2>Adventure<span class="danger">Travels</span>
+                    <h2>Adventure<br><span class="danger">Travels</span>
                         </span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -81,15 +81,138 @@
                         </span>
                     <h3>New Login</h3>
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">
                         logout
                         </span>
                     <h3>Logout</h3>
-                </a>
+                </a> -->
             </div>
         </aside>
         <!-- End of Sidebar Section -->
+        
+
+        <!-- Main section -->
+        <main>
+            <h1>Analytics</h1>
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total Users</h3>
+                            <h1 id="totaluser-count">7654</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+81%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visits">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Male</h3>
+                            <h1 id="totalMale-count">5034</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+48%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Female</h3>
+                            <h1>14,147</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- End of Analyses -->
+
+
+<!-- Recent Orders Table -->
+<div class="recent-orders">
+    <h2>All Users Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email Id</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>Edit data</th>
+                <th>Delete data</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+    </table>
+    <a href="#">Show All</a>
+</div>
+<!-- End of Order section -->
+        </main>
+        <!-- end of main section -->
+
+        <!-- right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+            </div>
+            <div id="newdatadiv">
+                <p class="form-head">Add New Data<p>
+                <form action="" id="newdata">
+                    <label for="">Name</label><br>
+                    <input type="text"><br>
+                    <label for="">Email</label><br>
+                    <input type="text"><br>
+                    <label for="">Password</label><br>
+                    <input type="text"><br>
+                    <label for="">Gender</label><br>
+                    <input type="text"><br>
+                    <button id="newdatabtn" class="rightformbtn">Add NewUser</button>
+                </form>
+            </div>
+            <div id="updatadiv">
+                <p class="form-head">Edit Data</p>
+                <form action="" id="newdata">
+                     <label for="">Id</label><br>
+                    <input type="text"><br>
+                    <label for="">Name</label><br>
+                    <input type="text"><br>
+                    <label for="">Email</label><br>
+                    <input type="text"><br>
+                    <label for="">Password</label><br>
+                    <input type="text"><br>
+                    <label for="">Gender</label><br>
+                    <input type="text"><br>
+                    <button id="newdatabtn" class="rightformbtn">Add NewUser</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 
