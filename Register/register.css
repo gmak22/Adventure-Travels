@@ -1,5 +1,5 @@
 #Register-box{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: auto;
     width: 30%;
@@ -8,6 +8,7 @@
     text-align: center;
 }
 #registerh3{
+    font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .login,.register{
@@ -26,7 +27,7 @@
    
     width: 100%;
     background-color: #f1f1f2;
-    border: 1px solid rgb(66, 65, 65);
+    /* border: 1px solid rgb(66, 65, 65); */
     margin: auto;
     display: flex;
     margin-top: 20px;
@@ -41,15 +42,7 @@
    font-size: 16px;
    border-radius: 10px;
   }
-  .gendercheck{
-      width: 80%;
-      margin: auto;
-      font-size: 16px;
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-  }
+ 
   .fistnamelastname{
       width: 80%;
    display: grid;
@@ -67,6 +60,27 @@
       font-size: 16px;
       border-radius: 10px;
   }
+  .registerspan{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   #regilogin{
+       color: red;
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   #submit{
+       background-color: #169ed4; border: 0px;
+        color: white;
+         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         font-size: 20px;
+   }
+   #process{
+       background-color: #169ed4; border: 0px;
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+   }
 
 
 
