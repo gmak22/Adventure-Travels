@@ -101,7 +101,8 @@ b{
     width: 96%;
     margin: 0 auto;
     gap:1.8rem;
-    grid-template-columns: 12rem auto 23rem;
+    /* grid-template-columns: 12rem auto 23rem; */
+    grid-template-columns: 12rem auto;
 }
 aside{
     height: 100vh;
@@ -117,7 +118,12 @@ aside .toggle .logo{
     gap: 0.5rem;
 }
 aside .toggle .logo h2{
-    margin-top: 1.2rem;
+    font-size:1.3rem;
+    gap: -3px;
+}
+aside .toggle .logo span{
+    margin-left:35%;
+    font-size: 1.1rem;
 }
 aside .toggle .logo img{
     width: 5rem;
@@ -133,10 +139,11 @@ aside .sidebar{
     background-color: var(--color-white);
     box-shadow:var(--box-shadow);
     border-radius: 15px;
-    height: 88vh;
+    height: auto;
     position: relative;
     top: 1.5rem;
     transition:all 0.3s ease;
+    padding-bottom: 5rem;
 }
 aside .sidebar:hover{
   box-shadow: none;  
@@ -158,18 +165,18 @@ aside .sidebar a span{
 aside .sidebar a:first-child{
     margin-top: 1rem;
 }
-aside .sidebar a:last-child{
+/* aside .sidebar a:last-child{
     position: absolute;
     bottom:2rem;
     width:100%;
-}
-aside .sidebar a.active{
+} */
+aside .sidebar a:hover{
     width: 100%;
     color: var(--color-primary);
     background-color: var(--color-light);
     margin-left: 0;
 }
-aside .sidebar a.active::before{
+aside .sidebar a:hover::before{
     content: '';
     width: 6px;
     height: 18px;
@@ -190,13 +197,192 @@ aside .sidebar .message-count{
     padding: 2px 6px;
     color: var(--color-white);
     font-size: 11px;
+    margin-left: 0.5rem;
     border-radius: var(--border-radius-1);
 }
 
 
 
+main{
+    margin-top: 4.4rem;
+}
+main .analyse{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.6rem;
+}
+main .analyse > div{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+main .analyse > div:hover{
+    box-shadow: none;
+}
+main .analyse > div .status{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .analyse h3{
+    margin-left:0.6rem;
+    font-size: 1rem;
+}
+main .analyse .progresss{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius:50%;
+}
+main .analyse svg{
+    width: 7rem;
+    height: 7rem;
+}
+main .analyse svg circle{
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform:translate(5px,5px);
+}
+main .analyse .sales svg circle{
+   stroke: var(--color-success); 
+   stroke-dashoffset:-30;
+   stroke-dasharray: 200;
+}
+main .analyse .visits svg circle{
+    stroke: var(--color-danger); 
+    stroke-dashoffset:-30;
+    stroke-dasharray: 200;
+ }
+ main .analyse .searches svg circle{
+    stroke: var(--color-primary); 
+    stroke-dashoffset:-30;
+    stroke-dasharray: 200;
+ }
+main .analyse .progresss .percentage{
+    position: relative;
+    top: -110%;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 
+}
 
-/* body{
-    background:linear-gradient(pink,purple);
+main .recent-orders{
+    margin-top: 1.3rem;
+}
+main .recent-orders h2{
+    margin-bottom: 0.8rem;
+}
+main .recent-orders table{
+background-color: var(--color-white);
+width: 100%;
+padding: var(--card-padding);
+text-align: center;
+box-shadow: var(--box-shadow);
+border-radius: var(--card-border-radius);
+transition: all 0.3s ease;
+}
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+main table tbody tr:last-child{
+    border: none;
+}
+main .recent-orders a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+     color: var(--color-primary);
+}
+.tdbutton{
+    height: 80%;
+    width: 80%;
+    color: #f6f6f9;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#td-edit-button{
+    background-color: #1B9C85;
+}
+#td-edit-button:hover{
+    background-color: var(--color-white);
+    color:#1B9C85;
+    border: 2px solid #1B9C85;
+}
+#td-delete-button{
+    background-color: #FF0060;
+}
+#td-delete-button:hover{
+    background-color: var(--color-white);
+    color:#FF0060;
+    border: 2px solid #FF0060;
+}
+.right-section{
+    display: none;
+}
+#newdatadiv{
+    margin-left: 2%;
+}
+/* #newdatadiv h2,#updatadiv h2{
+     margin-left: 25%; 
 } */
+form{
+    background-color: white;
+    /* primary */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 15px;
+    padding: 2rem 3rem  2rem 1rem;
+    width: 80%;
+    border-left: 20px solid #1B9C85;
+}
+.form-head{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color:var(--color-dark);
+}
+form input{
+    height: 2rem;
+    width: 15rem;
+    border-radius: 10px;
+    background-color: #edeffd;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+form input:focus{
+    background-color:#F7D060;
+}
+form label{
+    font-size: 1rem;
+}
+#updatadiv{
+    margin-top: 5%;
+}
+.rightformbtn{
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 15px;
+    background-color:#FF0060;
+    margin-left: 20%;
+    margin-top: 10%;
+    border:5px solid rgb(175, 18, 178);
+    font-weight: bolder;
+    color: white;
+}
+.rightformbtn:hover{
+    background-color:rgb(175, 18, 178); 
+    border:5px solid #FF0060;
+    color: #F7D060;
+}
