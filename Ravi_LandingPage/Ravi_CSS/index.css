@@ -160,13 +160,15 @@ header {
 
 /* Hero section CSS */
 #hero {
-    height: 130vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
 }
 
 #hero h1 {
@@ -175,6 +177,9 @@ header {
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    position: relative;
+    /* top: 20%;
+    left: 30%; */
 }
 
 #hero .linkflex {
@@ -182,6 +187,7 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 5vh;
+    margin-bottom: 5vh;
 }
 
 #hero .linkflex button {
@@ -200,31 +206,80 @@ header {
     text-decoration: none;
 }
 
-#hero grid {
+#hero .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 40% 20% 40%;
     width: 90%;
     margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 .hero-png {
     position: relative;
 }
 
-.cloudImage {
-    position: absolute;
-    top: 2vh;
-}
-
-/* .cloudImage+div {
-    /* object-fit: contain;
-        width: 50%;
-        height: 50%; 
-} */
-
 #hero .adventure-types {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: space-between; */
+    gap: 5vh;
+    position: relative;
+    top: 12%;
+}
+
+#hero .col-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    text-align: left;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+#hero .round {
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    object-position: center;
+}
+
+.round img {
+    height: 10vh;
+    width: 10vh;
+}
+
+.middle-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+    position: relative;
+}
+
+.middle-cell>div:nth-child(1) {
+    display: flex;
+    margin-top: 10vh;
+    margin-right: 2vh;
+}
+
+.middle-cell>div:nth-child(1)>span {
+    padding-top: 6%;
+}
+
+.middle-cell>div:nth-child(2) {
+    position: absolute;
+    top: 65%;
+}
+
+#hero .adventure-types>div {
+    display: flex;
+    height: 10vh;
+    width: 100%;
 }
