@@ -1,3 +1,43 @@
+:root {
+    --headings: #000000;
+    --background: #ebebeb;
+    --paragraph: #696969;
+    --highlight-light: #f6f6f6;
+    --highlight-dark: #f2f2f2;
+    --waves-color: #d58170;
+    --h1: 5.5rem;
+    --h2: 3.5rem;
+    --h3: 1.75rem;
+    --h4: 1.25rem;
+}
+
+@media screen and (max-width: 635px) {
+    :root {
+        --h1: 3.25rem;
+        --h2: 2.75rem;
+        --h3: 1.25rem;
+        --h4: 1rem;
+    }
+
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    :root {
+        --h1: 4rem;
+        --h2: 2.75rem;
+        --h3: 1.25rem;
+        --h4: 1rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -171,6 +211,10 @@ header {
     overflow: hidden;
 }
 
+#hero .container {
+    width: 90%;
+}
+
 #hero h1 {
     font-size: 5rem;
     width: 90%;
@@ -187,7 +231,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 5vh;
+    width: 23%;
+    margin: auto;
     margin-bottom: 5vh;
+    margin-top: 10vh;
 }
 
 #hero .linkflex button {
@@ -211,7 +258,7 @@ header {
     grid-template-columns: 40% 20% 40%;
     width: 90%;
     margin: auto;
-    margin-top: 4vh;
+    margin-top: 10vh;
     margin-bottom: 4vh;
 }
 
@@ -283,22 +330,368 @@ header {
 
 /* Nature section CSS */
 
+
+#nature {
+    margin-bottom: 3rem;
+}
+
 #nature h1 {
-    font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: bolder;
     text-align: center;
     margin-top: 5vh;
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
+
+    font-size: var(--h2);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+    line-height: 1;
 }
 
 #nature .nature-flex {
     display: flex;
+    height: 22rem;
     width: 90%;
     margin: auto;
-    justify-content: space-around;
-    /* position: relative; */
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
 }
 
-#nature .nature-flex>div:nth-child(1) {
-    top: 5vh;
+#nature .nature-flex>img {
+    height: 15rem;
+    width: 25%;
+    object-fit: cover;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+#nature .nature-flex>div:nth-child(2),
+#nature .nature-flex>div:nth-child(4) {
+    align-self: flex-end;
+}
+
+#nature .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 23%;
+    height: 20rem;
+}
+
+#nature .card .card__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#nature .card .location {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+#nature .card .location>img {
+    width: 0.8rem;
+    object-fit: cover;
+    margin-right: 0.25rem;
+}
+
+#nature .card .location>p {
+    font-size: 0.85rem;
+}
+
+.nature-flex>div>button {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    height: 2rem;
+}
+
+/* Features section CSS */
+
+#features {
+    padding: 5rem 0;
+}
+
+@media screen and (max-width: 635px) {
+    #features {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #features {
+        padding: 3rem 0;
+    }
+}
+
+/*Common CSS start*/
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.75s ease-in-out;
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+/*Common CSS end*/
+
+#features .container {
+    padding-bottom: 3rem;
+}
+
+#features .container>h2 {
+    text-align: center;
+    font-size: var(--h2);
+    font-weight: bolder;
+    letter-spacing: -1px;
+    margin-bottom: 3rem;
+    line-height: 1;
+}
+
+#features .container {
+    width: min(100%, 65rem);
+    margin: auto;
+}
+
+#features>.container>div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media screen and (max-width: 1050px) {
+    #features>.container>div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #features>.container>div {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}
+
+#features>.container>div>div {
+    background-color: var(--highlight-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+#features>.container>div>div>img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: var(--h3);
+    margin-bottom: 1rem;
+    color: var(--headings);
+}
+
+p {
+    font-size: 0.9rem;
+    color: var(--paragraph);
+    line-height: 1.5;
+}
+
+/* Services section CSS */
+
+@media screen and (max-width: 1050px) {
+    #services {
+        padding: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #services {
+        padding: 2rem 0;
+    }
+}
+
+#services {
+    padding: 5rem 0;
+}
+
+@media screen and (max-width: 500px) {
+    #services .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#services .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#services .container {
+    padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+#services .container {
+    width: min(100%, 65rem);
+    margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+    #services .container>div {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+#services .container>div {
+    width: 50%;
+}
+
+#services h2 {
+    font-size: var(--h2);
+    font-weight: bolder;
+    letter-spacing: -1px;
+    margin-bottom: 3rem;
+    line-height: 1;
+}
+
+#services .container>div:first-of-type>div {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 500px) {
+    #services .container>div:first-of-type>div>* {
+        margin-bottom: 1rem;
+    }
+}
+
+#services .container>div:first-of-type>div>* {
+    margin-bottom: 2rem;
+}
+
+#services .container>div:first-of-type>div h3 {
+    font-size: var(--h3);
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: var(--h3);
+    margin-bottom: 1rem;
+    color: var(--headings);
+}
+
+#services .container>div:first-of-type>div span {
+    font-weight: 400;
+}
+
+#services .container>div:first-of-type>div p {
+    font-size: 0.85rem;
+    max-width: 400px;
+    color: var(--paragraph);
+}
+
+p {
+    font-size: 0.9rem;
+    color: var(--paragraph);
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1050px) {
+    #services .container>.image__container {
+        height: 30rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #services .container>.image__container {
+        position: relative;
+        height: 25rem;
+    }
+}
+
+#services .container>.image__container {
+    position: relative;
+    height: 30rem;
+}
+
+#services .container>div {
+    width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+    #services .container>div {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+#services .container .image__container img {
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+}
+
+@media screen and (max-width: 1050px) {
+    .circular__img1 {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .circular__img1 {
+        width: 7.5rem;
+        height: 7.5rem;
+        left: 10%;
+        top: 10%;
+    }
+}
+
+.circular__img1 {
+    width: 10rem;
+    height: 10rem;
+}
+
+img {
+    object-fit: cover;
 }
