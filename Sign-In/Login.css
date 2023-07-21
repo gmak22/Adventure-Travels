@@ -58,9 +58,13 @@
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-#process{
+.process{
+    width: 80%;
+    margin-top: 20px;
+    height: 40px;
     background-color: #169ed4; border: 0px;
      color: white;
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
      font-size: 18px;
+     border-radius: 10px;
 }
