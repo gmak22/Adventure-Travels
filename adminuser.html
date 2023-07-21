@@ -32,17 +32,21 @@
                     </span>
                     <h3>dashboard</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="alldestinationdata">
                     <span class="material-icons-sharp">
-                       person_outline
-                    </span>
-                    <h3>Users</h3>
+                        location_on
+                        </span>
+                        <h3>Destinations</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
+                <a href="#" id="allusersdata">
+                    <!-- <span class="material-icons-sharp">
                         receipt_long
                         </span>
-                    <h3>History</h3>
+                    <h3>History</h3> -->
+                    <span class="material-icons-sharp">
+                       person_outline
+                    </span> 
+                    <h3>Users</h3>
                 </a>
                 <a href="#" class="active">
                     <span class="material-icons-sharp">
@@ -57,11 +61,11 @@
                     <h3>Tickets</h3>
                     <span class="message-count">27</span>
                 </a>
-                <a href="#">
+                <a href="#" id="add-data-icon">
                     <span class="material-icons-sharp">
                      inventory
                     </span>
-                    <h3>Sale List</h3>
+                    <h3>Add Data</h3>
                 </a>
                 <a href="#">
                     <span class="material-icons-sharp">
@@ -100,7 +104,7 @@
                     <div class="status">
                         <div class="info">
                             <h3>Total Users</h3>
-                            <h1 id="totaluser-count">7654</h1>
+                            <h1 id="totaluser-count"></h1>
                         </div>
                         <div class="progresss">
                             <svg>
@@ -117,7 +121,7 @@
                     <div class="status">
                         <div class="info">
                             <h3>Male</h3>
-                            <h1 id="totalMale-count">5034</h1>
+                            <h1 id="totalMale-count"></h1>
                         </div>
                         <div class="progresss">
                             <svg>
@@ -133,7 +137,7 @@
                     <div class="status">
                         <div class="info">
                             <h3>Female</h3>
-                            <h1>14,147</h1>
+                            <h1 id="totalFemale-count"></h1>
                         </div>
                         <div class="progresss">
                             <svg>
@@ -151,23 +155,44 @@
 
 <!-- Recent Orders Table -->
 <div class="recent-orders">
-    <h2>All Users Data</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>User Name</th>
-                <th>Email Id</th>
-                <th>Password</th>
-                <th>Gender</th>
-                <th>Edit data</th>
-                <th>Delete data</th>
-            </tr>
-        </thead>
-        <tbody>
-         
-        </tbody>
-    </table>
-    <a href="#">Show All</a>
+    <div id="alluserdatadiv"><h2>All Users Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Email Id</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>Edit data</th>
+                    <th>Delete data</th>
+                </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+        </table>
+        <a href="#">Show All</a></div>
+    
+     <div id="destinationdatadiv">
+        <h2>All Destinations Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Destination</th>
+                    <th>Capital</th>
+                    <th>Image</th>
+                    <th>Edit data</th>
+                    <th>Delete data</th>
+                </tr>
+            </thead>
+            <tbody id="destbody">
+             
+            </tbody>
+        </table>
+        <a href="#">Show All</a>
+     </div>
+ 
 </div>
 <!-- End of Order section -->
         </main>
@@ -175,24 +200,24 @@
 
         <!-- right Section -->
         <div class="right-section">
-            <div class="nav">
+            <!-- <div class="nav">
                 <button id="menu-btn">
                     <span class="material-icons-sharp">
                         menu
                     </span>
                 </button>
-            </div>
+            </div> -->
             <div id="newdatadiv">
                 <p class="form-head">Add New Data<p>
                 <form action="" id="newdata">
                     <label for="">Name</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="newdataname"><br>
                     <label for="">Email</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="newdataemail"><br>
                     <label for="">Password</label><br>
-                    <input type="text"><br>
+                    <input type="text"id="newdatapass"><br>
                     <label for="">Gender</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="newdatagender"><br>
                     <button id="newdatabtn" class="rightformbtn">Add NewUser</button>
                 </form>
             </div>
@@ -200,16 +225,16 @@
                 <p class="form-head">Edit Data</p>
                 <form action="" id="newdata">
                      <label for="">Id</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="editid"><br>
                     <label for="">Name</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="editname"><br>
                     <label for="">Email</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="editemail"><br>
                     <label for="">Password</label><br>
-                    <input type="text"><br>
+                    <input type="text" id="editpass"><br>
                     <label for="">Gender</label><br>
-                    <input type="text"><br>
-                    <button id="newdatabtn" class="rightformbtn">Add NewUser</button>
+                    <input type="text" id="editgender"><br>
+                    <button id="editdatabtn" class="rightformbtn">Edit User</button>
                 </form>
             </div>
         </div>
