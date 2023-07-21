@@ -1,7 +1,10 @@
 const API = `https://correct-api-destination.onrender.com/destination`;
 
+let bookData = JSON.parse(localStorage.getItem("bookingData")) || [];
+
 let stateContainer = document.getElementById("stateContainer");
 let placeContainer = document.getElementById("placeContainer");
+let sortByPrice = document.getElementById("sortByPrice");
 
 //Fetching Data 
 async function fetchData(URL) {
@@ -92,6 +95,21 @@ function createPlace(data) {
     let bookBtn = document.createElement("button");
     bookBtn.innerText = "Book Now";
     bookBtn.className = "bookBtn";
+    bookBtn.addEventListener("click", () => {
+      let obj = {
+        name: item.name,
+        price: item.price
+      }
+    
+      //Checking if the place with the same name and price already exists in bookData array
+      const isAlreadyBooked = bookData.some((bookedItem) => bookedItem.name === obj.name && bookedItem.price === obj.price);
+    
+      if (!isAlreadyBooked) {
+        bookData.push(obj);
+        localStorage.setItem("bookingData", JSON.stringify(bookData));
+        //window.location.href = "./booking.html"
+      }  
+    })
 
     card_img.append(img);
     card_pkg.append(package, category);
@@ -113,39 +131,73 @@ search.addEventListener("input", () => {
   placeContainer.innerHTML = "";
   clearTimeout(delayTimer);
 
-  if(search.value === ""){
+  if (search.value === "") {
     fetchData(API);
   }
-  else{
+  else {
     delayTimer = setTimeout(() => {
       let filteredData = [];
 
-      for (let i = 1; i <= 11; i++){
+      for (let i = 1; i <= 11; i++) {
         fetch(`${API}/${i}`)
           .then((res) => res.json())
           .then((data) => {
             data.place.forEach((element) => {
-              if(element["name"].toUpperCase().includes(search.value.toUpperCase())){
+              if (element["name"].toUpperCase().includes(search.value.toUpperCase())) {
                 filteredData.push(element);
                 console.log(filteredData);
               }
             });
-            displaySearchedPlaces(filteredData);    
+            displayNewPlaces(filteredData);
           })
           .catch((err) => {
             console.log(err);
           });
       }
-    }, 3000);
+    }, 100);
   }
 });
 
 //Dispalying Searched Places
-function displaySearchedPlaces(newData) {
+function displayNewPlaces(newData) {
   placeContainer.innerHTML = "";
 
-  newData.forEach(item => {
-    let card = createPlace(item);
-    placeContainer.append(...card);
-  })
+  let card = createPlace(newData);
+  placeContainer.append(...card);
 }
+
+//window.onload(localStorage.clear());
+
+//Filtering by Price
+sortByPrice.addEventListener("change", function () {
+  placeContainer.innerHTML = "";
+  if (sortByPrice.value === "") {
+    fetchData(API);
+  }
+  else {
+    let sortedData = [];
+    for (let i = 1; i <= 11; i++) {
+      fetch(`${API}/${i}`)
+        .then((res) => res.json())
+        .then((data) => {
+          data.place.forEach((element) => {
+            sortedData.push(element);
+            console.log(sortedData);
+          });
+          let ans = sortedData.sort((a, b) => {
+            if (sortByPrice.value === "Low") {
+              return a["price"] - b["price"];
+            }
+            else {
+              return b["price"] - a["price"];
+            }
+          })
+          console.log(ans)
+          displayNewPlaces(sortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+})

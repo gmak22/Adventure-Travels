@@ -13,36 +13,69 @@
         <form action="" id="searchForm">
             <input type="search" id="search" placeholder="search destination">
         </form>
-
-        <select>
-            <option value="" selected>Select Range</option>
-            <option value="Low">Price Low to High</option>
-            <option value="High">Price High to Low</option>
-        </select>
     </header>
 
-    <aside>
-        <form action="">
-            <label for="r1"><input type="radio" id="r1">Rs. 1000 - Rs. 9999</label>
-            <label for="r2"><input type="radio" id="r2">Rs. 10000 - Rs. 19999</label>
-            <label for="r3"><input type="radio" id="r3">Rs. 20000 - Rs. 29999</label>
-            <label for="r4"><input type="radio" id="r4">Rs. 30000 - Rs. 39999</label>
-            <label for="r5"><input type="radio" id="r5">Rs. 40000 - Rs. 49999</label>
-            <label for="r6"><input type="radio" id="r6">Rs. 50000 - Rs. 59999</label>
-            <label for="r7"><input type="radio" id="r7">Rs. 60000 - Rs. 69999</label>
-        </form>
-    </aside>
-    
-    <section>
-        <h1 >Top States in India</h1>
-        <div id="stateContainer"></div>
-    </section>
+    <main>
+        <aside id="filterRange">
+            <div class="radio-group">
+                <h2>Price</h2>
+                <input class="radio-input" name="radio-group" id="radio1" type="radio">
+                <label class="radio-label" for="radio1">
+                  <span class="radio-inner-circle"></span>
+                  Rs. 1000 - Rs. 9999
+                </label>
+                
+                <input class="radio-input" name="radio-group" id="radio2" type="radio">
+                <label class="radio-label" for="radio2">
+                  <span class="radio-inner-circle"></span>
+                  Rs. 10000 - Rs. 19999
+                </label>
+                
+                <input class="radio-input" name="radio-group" id="radio3" type="radio">
+                <label class="radio-label" for="radio3">
+                  <span class="radio-inner-circle"></span>
+                  Rs. 20000 - Rs. 29999
+                </label>
 
-    <section id="placeSection">
-        <h1>Popular Places in India</h1>
-        <div id="placeContainer"></div>
-    </section>
+                <input class="radio-input" name="radio-group" id="radio4" type="radio">
+                <label class="radio-label" for="radio4">
+                  <span class="radio-inner-circle"></span>
+                  Rs. 30000 - Rs. 39999
+                </label>
+                
+                <input class="radio-input" name="radio-group" id="radio5" type="radio">
+                <label class="radio-label" for="radio5">
+                  <span class="radio-inner-circle"></span>
+                  Rs. 40000 - Rs. 49999
+                </label>
+                
+                <input class="radio-input" name="radio-group" id="radio6" type="radio">
+                <label class="radio-label" for="radio6">
+                  <span class="radio-inner-circle"></span>
+                  Rs. 50000 - Rs. 59999
+                </label>
+              </div>
+              <div>
+                <h2>Sort</h2>
+                <select id="sortByPrice">
+                    <option value="" selected>Select Range</option>
+                    <option value="Low">Price Low to High</option>
+                    <option value="High">Price High to Low</option>
+                </select>
+              </div>
+        </aside>
 
+        <section id="placeSection">
+            <h1>Popular Places in India</h1>
+            <div id="placeContainer"></div>
+        </section>
+        
+        <aside id="stateSection">
+            <h1 >Top States</h1>
+            <div id="stateContainer"></div>
+        </aside>      
+    </main>
+  
     <script src="scripts/destinations.js"></script>
 </body>
 
