@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>12000</h3>
+        <button class="book-btn">Book Now</button>
+    </div>
+    <div>
+        <h3>15000</h3>
+        <button class="book-btn">Book Now</button>
+    </div>
+    <div>
+        <h3>19000</h3>
+        <button class="book-btn">Book Now</button>
+    </div>
+</body>
+<script>
+    const bookButtons = document.querySelectorAll(".book-btn");
+
+    function bookNow(event) {
+        const priceElement = event.target.parentElement.querySelector('h3');
+        const priceValue = parseInt(priceElement.textContent);
+        localStorage.setItem("selectedPrice", priceValue);
+        console.log("Price stored in local storage: " + priceValue);
+        window.location.href = "paymentPage.html";
+    }
+
+    bookButtons.forEach(button => {
+        button.addEventListener("click", bookNow);
+    });
+   
+
+   
+</script>
+</html>

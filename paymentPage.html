@@ -6,11 +6,22 @@
     <title>Document</title>
 </head>
 <style>
-    body{
-        background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
-        color: black;
 
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 90%;
+    margin: auto;
+    background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
+        color: black;
+}
+   
     #main{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -77,21 +88,112 @@
         height: 50px;
         border-radius: 10px;
     }
+    .main1 input{
+    background-color: lightgrey;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+
+
     .sub{
         display: flex;
+        
     }
-    .main2 div{
+    #main2 #Summary{
         border: 2px solid black;
-        width: 60%;
-        height: 300px;
+        width: 80%;     
         font-size: 30px;
         margin-right: 100px;
         margin-top: 20px;
-        color: white;
-    }
+        color: black;
+        background-color: rgba(162, 181, 220, 0.5);
+        padding: 20px;
+        border-radius: 20px;
+}
+#main2 #Summary span{
+    font-size: 25px;
+   
+}
+#main2 #Summary input{
+    background-color: lightgrey;
+    font-size: 18px;
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 30px;
+    margin-top: 10px;
+}
+#main2 #Summary button{
+    background-color: rgb(113, 142, 210);
+    font-size: 18px;
+    width: 40%;
+    margin-left: 264px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 30px;
+    margin-top: 10px;
+}
+#main2 #Summary select{
+    background-color: lightgrey;
+    font-size: 18px;
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#Summary h3{
+    text-align: center;
+}
+.location{
+    margin-right: 120px;
+}
+.price{
+    margin-right: 10px;
+}
+.guest{
+    margin-right: 91px;
+}
+.gst{
+    margin-right: 31%;
+}
+.total{
+    margin-right: 99px;
+}
+.coupon{
+    margin-right: 90px;
+}
+.final{
+    margin-right: 25px;
+}
+
+
+
+#main2 #offer{
+        border: 2px solid black;
+        width: 80%;     
+        margin-right: 100px;
+        color: black;
+        background-color: rgba(208, 219, 50, 0.5);
+        padding: 20px;
+        border-radius: 20px;
+}
+
+#offer div{
+    text-align: center;
+    font-size: 25px;
+}
 
 </style>
 <body>
+
+   
+
+
     <div id="main">
 
     <div class="main1">
@@ -105,55 +207,153 @@
         <input type="number" id="age" placeholder="Enter Age Here">
     </div>
     <div class="input-group">
-        <label for="source-city">Source City:</label> <br>
+        <label for="source-city">City:</label> <br>
         <input type="text" id="source-city" placeholder="Enter City Name">
     </div>
-   </div>
-    
-    
-    <button>Proceed to Checkout</button>
+   </div>   
+    <button id="checkout">Proceed to Checkout</button>
     </div>
 
-    <div class="main2">
 
-        <div>
-        <h3>Apply Coupen Code Here</h3>
-       
-            <label for="coupon">Coupon Code:</label>
-            <input type="text" id="coupon" />
-            <button onclick="applyCoupon()">Apply Coupon</button>
-       
-            <p>Original Price: 100</p>
-            <p id="discountedPrice">Discounted Price: Rs100</p>
-  
-        </div>
-        <div>
-            <h3>Your Selected Plan </h3>
-        </div>
+
+
+    <div id="main2">
+        <div id="offer">
+           <div>
+            <h1>20% OFF</h1>
+            <h4>Use Promo Code</h4>
+            <h3>"Adventure20"</h3>
+           </div>    
+            <p>Terms & Conditions* : PromoCode is applicable only for the Prices above 50000....</p>
         
+        
+       </div>
+       
+
+       
+        <div id="Summary">
+            <h3>Summary of Your Plan </h3>
+            <span class="location">Destination : </span> <input id="location" type="text"><br>
+            <span class="price">Price Per Person(Rs) : </span> <input id="plan" type="text"><br>
+            <span class="guest">No. of Person : </span>
+            <select name="guest" id="guest">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+             </select> <br>
+
+             <button onclick="calculateTotalAmount()">Calculate</button> <br>
+             <span class="gst">GST 5% : </span>
+             <input type="text" id="gst"> <br>
+            <span class="total">Total Amount : </span> 
+            <input type="text" id="totalAmount"> <br> <br>
+
+            <span class="coupon">Coupon Code : </span>
+            <input type="text" id="coupon" />   <br>
+            <button onclick="applyCoupon()">Apply Coupon</button> <br>  
+
+            <span class="final">Total Amount  Payble: </span> 
+            <input type="text" id="finalAmount">
+
+        </div>      
     </div>
     </div>
     
 </body>
 
 <script>
+function displayStoredPrice() {
+            const storedPrice = localStorage.getItem("selectedPrice");
+            if (storedPrice !== null) {
+                const priceInput = document.querySelector("#plan");
+                priceInput.value = storedPrice;
+            }
+        }
+        displayStoredPrice();
 
-function applyCoupon() {
-  const couponCode = document.getElementById('coupon').value;
-  const originalPrice = 100; // Replace this with the original price
-  let discountedPrice = originalPrice;
 
+
+ function calculateTotalAmount() {
   
-  if (couponCode === 'ADVENTURE20') {
-    // Apply a 20% discount for this coupon
+  const pricePerPerson = Number(document.getElementById('plan').value);
+  const numberOfPersons = Number(document.getElementById('guest').value);
+
+  // Calculate total amount (price per person * no. of persons) + 5% GST
+  const gstPercentage = 5;
+  const gstAmount = (pricePerPerson * numberOfPersons * gstPercentage) / 100;
+
+
+  const totalAmount = pricePerPerson * numberOfPersons + gstAmount;
+
+  // Display the total amount
+  document.getElementById('gst').value = Math.floor(gstAmount);
+  document.getElementById('totalAmount').value = Math.floor(totalAmount);
+  
+ }
+
+
+
+
+ function applyCoupon() {
+  const couponCodeInput = document.getElementById('coupon');
+  const couponCode = couponCodeInput.value;
+  const totalAmountInput = document.getElementById('totalAmount');
+  const finalAmountInput = document.getElementById('finalAmount');
+
+  const totalAmount = Number(totalAmountInput.value);
+
+  if (totalAmount > 50000 && couponCode === 'Adventure20') {
+   
     const discountPercentage = 20;
-    discountedPrice = originalPrice - (originalPrice * discountPercentage) / 100;
-  } 
-  else {
-    discountedPrice = originalPrice;
+    const discountAmount = (totalAmount * discountPercentage) / 100;
+    const finalAmount = totalAmount - discountAmount;
+
+    finalAmountInput.value = Math.floor(finalAmount);
+
+    alert('Coupon applied successfully!');
+  } else if(totalAmount < 50000){
+    alert('coupon not applicable.');
+    finalAmountInput.value = Math.floor(totalAmount);
+  }
+  
+  else {    
+    alert('Invalid coupon code');
+    finalAmountInput.value = Math.floor(totalAmount);
+  }
+}
+
+
+
+function validateInputs() {
+  const inputs = document.querySelectorAll("input");
+  let isValid = true;
+
+  inputs.forEach(input => {
+    if (input.value === "") {
+      isValid = false;
+    }
+  });
+
+  if (!isValid) {
+    alert("Please fill in all the input fields before proceeding.");
   }
 
-  document.getElementById('discountedPrice').innerText = `Discounted Price: Rs${discountedPrice}`;
+  return isValid;
 }
+
+const checkoutButton = document.getElementById("checkout");
+checkoutButton.addEventListener("click", () => {
+  if (validateInputs()) {
+    alert("Form is ready for submission. Proceed to checkout!");
+  }
+});
+ 
 </script>
 </html>
