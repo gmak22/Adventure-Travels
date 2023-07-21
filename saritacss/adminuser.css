@@ -315,24 +315,25 @@ main .recent-orders a{
     border-radius: 15px;
     cursor: pointer;
 }
-#td-edit-button{
+#td-edit-button,#td-destedit-button{
     background-color: #1B9C85;
 }
-#td-edit-button:hover{
+#td-edit-button:hover,#td-destedit-button:hover{
     background-color: var(--color-white);
     color:#1B9C85;
     border: 2px solid #1B9C85;
 }
-#td-delete-button{
+#td-delete-button,#td-destdelete-button{
     background-color: #FF0060;
 }
-#td-delete-button:hover{
+#td-delete-button:hover,#td-destdelete-button:hover{
     background-color: var(--color-white);
     color:#FF0060;
     border: 2px solid #FF0060;
 }
 .right-section{
     display: none;
+    padding-top: 10rem;
 }
 #newdatadiv{
     margin-left: 2%;
@@ -353,6 +354,7 @@ form{
     font-size: 1.3rem;
     font-weight: bold;
     color:var(--color-dark);
+    margin-left: 10%;
 }
 form input{
     height: 2rem;
@@ -385,4 +387,13 @@ form label{
     background-color:rgb(175, 18, 178); 
     border:5px solid #FF0060;
     color: #F7D060;
+}
+
+
+
+
+
+
+#destinationdatadiv{
+    display: none;
 }
