@@ -5,45 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./../Register/register.css">
-    <style>
-        .register{
-            background-color: #efefef;
-            color: rgb(20, 19, 19);
-            /* border: 2px solid black; */
-        }
-
-        .login {
-            background-color: #169ed4;
-            color: white;
-            border: 0px;
-        }
-    </style>
+    <!-- <link rel="stylesheet" href="./../Register/register.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="Login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
 </head>
 
 <body>
     <div id="Register-box">
-        
-        <div id="registerh3"><h4>Login with The Adventure Travels</h4></div> 
+
+        <div id="registerh3">
+            <h4>Login with The Adventure Travels</h4>
+        </div>
         <div class="login_register_btn">
             <a href="Login.html" class="login"><button class="login">Sign-In</button></a>
             <!-- <a href="#" class="login"><span><button class="login_btn">Sign-in</button></span></a> -->
             <a href="./../Register/register.html" class="register"><button class="register">Sign-Up</button></a>
         </div>
 
-        <form action="">
+        
             <div id="registerinput">
                 <h3>-OR-</h3>
 
-                <!-- <form action=""> -->
+                <form action="">
                 <input type="text" placeholder="Enter Username" class="number_list" id="username">
                 <input type="password" placeholder="Enter Password" class="password_list" id="password">
                 <input type="submit" value="PROCEED" id="process">
-                <!-- </form> -->
-                <span class="registerspan">New User? <a href="./../Register/register.html" id="regilogin">Create Account</a> </span>
+                </form>
+                <span class="registerspan">New User? <a href="./../Register/register.html" id="regilogin">Create
+                        Account</a> </span>
             </div>
-        </form>
     </div>
+  
 </body>
 
 </html>

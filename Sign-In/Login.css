@@ -1,0 +1,66 @@
+#Register-box{
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: auto;
+    width: 25%;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+#registerh3{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#registerinput{
+   
+    width: 100%;
+    background-color: #f1f1f2;
+    /* border: 1px solid rgb(66, 65, 65); */
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+#username,#password,#process{
+    width: 80%;
+    margin: auto;
+   margin-top: 20px;
+   height: 40px;
+   font-size: 16px;
+   border-radius: 10px;
+}
+.login,.register{
+    width: 49%;
+    height: 50px;
+    font-size: 20px;  
+    
+}
+.register {
+    background-color: #efefef;
+    color: rgb(20, 19, 19);
+    /* border: 2px solid black; */
+}
+
+.login {
+    background-color: #169ed4;
+    color: white;
+    border: 0px;
+}
+.registerspan{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+#regilogin{
+   
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#process{
+    background-color: #169ed4; border: 0px;
+     color: white;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: 18px;
+}
