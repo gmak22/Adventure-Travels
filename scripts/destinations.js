@@ -35,6 +35,16 @@ function displayStates(data) {
 
     let image = document.createElement("img");
     image.src = element.img;
+    image.addEventListener("click", () => {
+      let stateArray = []
+      data.filter((a) => {
+        if (a.id === element.id) {
+          stateArray.push(a)
+          //console.log(a)
+          displayPlaces(stateArray);
+        }
+      })
+    })
 
     stateCard.append(image, location);
     stateContainer.append(stateCard);
@@ -98,17 +108,18 @@ function createPlace(data) {
     bookBtn.addEventListener("click", () => {
       let obj = {
         name: item.name,
-        price: item.price
+        price: item.price,
+        package: item.package
       }
-    
+
       //Checking if the place with the same name and price already exists in bookData array
       const isAlreadyBooked = bookData.some((bookedItem) => bookedItem.name === obj.name && bookedItem.price === obj.price);
-    
+
       if (!isAlreadyBooked) {
         bookData.push(obj);
         localStorage.setItem("bookingData", JSON.stringify(bookData));
         //window.location.href = "./booking.html"
-      }  
+      }
     })
 
     card_img.append(img);
@@ -168,7 +179,7 @@ function displayNewPlaces(newData) {
 
 //window.onload(localStorage.clear());
 
-//Filtering by Price
+//Sorting by Price
 sortByPrice.addEventListener("change", function () {
   placeContainer.innerHTML = "";
   if (sortByPrice.value === "") {
@@ -201,3 +212,32 @@ sortByPrice.addEventListener("change", function () {
     }
   }
 })
+
+let filterImg = document.querySelector(".filterImg");
+let radioGroup = document.querySelector(".radio-group");
+let radioInputs = document.querySelectorAll(".radio-input");
+
+filterImg.addEventListener('click', open);
+window.addEventListener('click', outsideClick);
+
+function open() {
+  if (radioGroup.style.display === 'flex') {
+    close();
+  } else {
+    radioGroup.style.display = 'flex';
+  }
+}
+
+function close() {
+  radioGroup.style.display = 'none';
+}
+
+function outsideClick(e) {
+  if (!radioGroup.contains(e.target) && e.target !== filterImg) {
+    close();
+  }
+}
+
+radioInputs.forEach(function (input) {
+  input.addEventListener('click', close);
+});

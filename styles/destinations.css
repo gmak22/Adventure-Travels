@@ -105,21 +105,19 @@ body {
 }
 
 #stateSection {
-    width: 15vw;
+    width: 16vw;
     position: fixed;
     right: 0;
     top: 0;
-    border: 2px solid green;
+    background-color: lightblue;
 }
 
 main {
     display: flex;
-
 }
 
 /* Filter by price range */
 #filterRange {
-    border: 3px solid blue;
     position: fixed;
     height: 100vh;
     background-color: #e2d9d9;
@@ -243,7 +241,7 @@ main {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     text-align: center;
-    border: 3px solid rebeccapurple;
+    /* border: 3px solid rebeccapurple; */
 }
 
 #stateContainer>div>img {
@@ -255,21 +253,25 @@ main {
 
 #stateContainer>div {
     transition: transform 0.4s;
+    transition: all 0.4s ease-in;
 }
 
 #stateContainer>div:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transform: scale(1.05);
     border-radius: 10px;
-    transition: all 0.8s ease-in;
+    /* transition: all 0.8s ease-in; */
 }
 
 .stateCard {
-    width: fit-content;
-    border: 2px solid rgb(128, 0, 0);
+    width: 90%;
+    /* border: 2px solid rgb(128, 0, 0); */
+    padding: 3px;
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .stateCard h3 {
@@ -285,4 +287,10 @@ main {
 
 .stateCard h3:hover {
     background-color: blue;
+}
+
+#stateSection h1,
+#placeSection h1 {
+    width: 90%;
+    margin: 10px auto;
 }
