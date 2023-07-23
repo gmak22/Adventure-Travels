@@ -1,6 +1,15 @@
 
 let urldata=`https://adventure-travels-json-server.onrender.com/register`;
 let tbody=document.querySelector("tbody"); 
+
+
+let totaluser=document.getElementById("totaluser-count");
+let totalMale=document.getElementById("totalMale-count");
+let totalfemale=document.getElementById("totalFemale-count")
+let malepercent=document.getElementById("malepercent");
+let femalepercent=document.getElementById("femalepercentage");
+
+
 window.addEventListener("load",function(){
     fetcheddata(urldata);
 });
@@ -20,7 +29,9 @@ function fetcheddata(url){
          d++;
             }
         }
-
+        let g=d/k*100;
+        malepercent.innerHTML=`+${g}%`;
+        femalepercent.innerHTML=`+${100-g}%`;
         totalMale.innerHTML=d;
         totalfemale.innerHTML=k-d;
     }).catch(function(error){
@@ -72,11 +83,6 @@ row.append(username,usermail,userpass,usergender,edit,button);
 
 
 
-let totaluser=document.getElementById("totaluser-count");
-
-let totalMale=document.getElementById("totalMale-count");
-
-let totalfemale=document.getElementById("totalFemale-count")
 let addNewDataBtn=document.getElementById("add-data-icon");
 
 let maincont=document.querySelector(".container");
@@ -123,7 +129,12 @@ function editeddata(ele){
         editpass.value=ele.password;
         editgender.value=ele.gender;
         p=0;
-    }
+  //   }  else if(p==0){
+  //     maincont.style.gridTemplateColumns = "12rem auto";
+  //         rightsection.style.display="none";
+  //         p=1;
+  //         // console.log(flag);
+  }
     // else if(p==0){
     //     maincont.style.gridTemplateColumns = "12rem auto";
     //     rightsection.style.display="none";
@@ -194,7 +205,8 @@ function editdatafunc(){
             maincont.style.gridTemplateColumns = "12rem auto";
             rightsection.style.display="none";
             p=1;
-        }  
+        } 
+         
 }
 function deletefn(id){
     fetch(`${urldata}/${id}`,{
@@ -209,91 +221,26 @@ function deletefn(id){
 }
 
 
+let allusersdata=document.getElementById("allusersdata");
+allusersdata.addEventListener("click",function(){
+  window.location.href="./adminuser.html";
+});
+
 
 // Experiment of table
 
 
 
-let getallusersdata=document.getElementById("allusersdata");
-getallusersdata.addEventListener("click",function(){
-    document.getElementById("destinationdatadiv").style.display="none";
-    document.getElementById("alluserdatadiv").style.display="block";
+// let getallusersdata=document.getElementById("allusersdata");
+// getallusersdata.addEventListener("click",function(){
+//     document.getElementById("destinationdatadiv").style.display="none";
+//     document.getElementById("alluserdatadiv").style.display="block";
   
-})
-
-
-
-let destinationdata=`https://correct-api-destination.onrender.com/destination`;
+// })
 
 let getalldestinationdata=document.getElementById("alldestinationdata");
+
 getalldestinationdata.addEventListener("click",function(){
-    document.getElementById("alluserdatadiv").style.display="none";
-    document.getElementById("destinationdatadiv").style.display="block";
-    fetchdestination(destinationdata);
-})
+    window.location.href="./adminproduct.html";
+});
 
-function fetchdestination(url){
-    let destdata=fetch(url,{
-       method:'GET', 
-    }).then(function(res){
-        return res.json();
-    }).then(function(list){
-        console.log(list);
-        displaydest(list);
-    //    let k=list.length;
-    //     let d=0;
-    //     totaluser.innerHTML=k;
-    //     for(let i=0;i<list.length;i++){
-    //         if(list[i].gender=="male"){
-    //      d++;
-    //         }
-    //     }
-
-        // totalMale.innerHTML=d;
-        // totalfemale.innerHTML=k-d;
-    }).catch(function(error){
-        console.log(error);
-    })
-    return destdata;
-}
-let desttbody=document.getElementById("destbody");
-function displaydest(data){
-    desttbody.innerHTML="";
-    for(let i=0;i<data.length;i++){
-        desttbody.append(destrow(data[i]));
-    }
-    }
-    
-    function destrow(ele){
-        let drow=document.createElement("tr");
-    let destid=document.createElement("td");
-    let destlocation=document.createElement("td");
-    let destcapital=document.createElement("td");
-    let destimg=document.createElement("td");
-    let destedit=document.createElement("td");
-    let destbutton=document.createElement("td");
-    let desteditb=document.createElement("button");
-    desteditb.setAttribute("class","tdbutton");
-    desteditb.setAttribute("id","td-destedit-button");
-    let destdeleteb=document.createElement("button");
-    destdeleteb.setAttribute("class","tdbutton");
-    destdeleteb.setAttribute("id","td-destdelete-button");
-    
-    destid.innerHTML=ele.id;
-    destlocation.innerHTML=ele.location;
-    destcapital.innerHTML=ele.capital;
-    destimg.innerHTML=ele.image;
-    desteditb.innerHTML="Edit";
-    destdeleteb.innerHTML="Delete";
-    
-    // destedit.addEventListener("click",function(){
-    //     destediteddata(ele);
-    // })
-    // destdeleteb.addEventListener("click",function(){
-    //     destdeletefn(ele.id);
-    // })
-    destedit.append(desteditb);
-    destbutton.append(destdeleteb);
-    drow.append(destid,destlocation,destcapital,destimg,destedit,destbutton);
-        return drow;
-    }
