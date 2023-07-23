@@ -15,57 +15,278 @@
 }
 
 body {
-    height: 100vh;
-    width: 90%;
+    /* height: 100vh; */
+    width: 95%;
     margin: auto;
-    background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
+    /* background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover; */
+    background-color: #ebebeb;
         color: black;
 }
+
+
+:root {
+    --headings: #000000;
+    --background: #ebebeb;
+    --paragraph: #696969;
+    --highlight-light: #f6f6f6;
+    --highlight-dark: #f2f2f2;
+    --waves-color: #d58170;
+    --h1: 5.5rem;
+    --h2: 3.5rem;
+    --h3: 1.75rem;
+    --h4: 1.25rem;
+}
+
+@media screen and (max-width: 635px) {
+    :root {
+        --h1: 3.25rem;
+        --h2: 2.75rem;
+        --h3: 1.25rem;
+        --h4: 1rem;
+    }
+
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    :root {
+        --h1: 4rem;
+        --h2: 2.75rem;
+        --h3: 1.25rem;
+        --h4: 1rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    /* height: 100vh; */
+    width: 95%;
+    margin: auto;
+}
+
+/* img {
+    max-width: 100%;
+    display: block;
+} */
+
+/* Scroll tracker CSS */
+.scroll-tracker {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 0.5rem;
+    background-color: skyblue;
+    transform-origin: left;
+    z-index: 100;
+    
+}
+
+/* Header CSS */
+
+header hr {
+    height: 1px;
+    border-width: 0;
+    background-color: grey;
+    margin-top: 3vh;
+}
+
+header li {
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+header a:hover {
+    color: orange;
+}
+
+.login {
+    background-color: lightgray;
+    cursor: pointer;
+    /* position: relative; */
+    /* bottom: 3px; */
+}
+
+.login>button {
+    background-color: var(--headings);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    padding: 0.3rem 0.3rem;
+    /* margin-bottom: 0.5rem; */
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    width: 5rem;
+    position: relative;
+    bottom: 0.2rem;
+}
+
+/* .logo {
+    height: 100%;
+} */
+
+.logo div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: maroon;
+}
+
+.logo img {
+    height: 4rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    margin-top: 4vh;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar .links .flex {
+    display: flex;
+    gap: 1vh;
+}
+
+.navbar .links .flex img {
+    height: 3.5vh;
+}
+
+header {
+    position: relative;
+}
+
+
+/* Dropdown CSS */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 8vh;
+    height: 0;
+    width: 300px;
+    background: rgba(50, 46, 46, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.dropdown_menu.open {
+    height: 29vh;
+}
+
+/* .dropdown_menu.open img {
+    height: 3vh;
+} */
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu li:hover {
+    color: orange;
+}
+
+
+
+
    
     #main{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        margin-top: 100px;
-        gap: 100px;
-       align-items: center;
-       justify-content: center;
-       width: 100%;
+        margin-top: 10px;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 50px;
+       
        
 
     }
     .main1{
-        border: 2px solid white;
-       font-size: 25px;
+       /* border: 2px solid black; */
+       font-size: 15px;
        padding: 30px;
-       width: 700px;
-       margin-left: 50px;
+       width: 90%;
        color: black ;
        border-radius: 20px;
-       background-color: rgba(162, 181, 220, 0.5);
+       background-color: rgba(229, 142, 142, 0.5);
        color: #0a0909;
+       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
        .main1 h2{
         text-align: center;
        }
-    
+       .main1 h2{
+        text-align: center;
+       }
     
     .main1 input{
         margin: 10px;
         width: 100%;
-        height: 50px;
+        height: 30px;
         border-radius: 10px;
         background-color: lightgray;
         color: black;
         border: 1px solid black;
+        text-align: center;
+
     }
+    .main1 ::placeholder{
+        text-align: center;
+    }
+    #main2 #Summary input{
+        text-align: center;
+
+    }
+    
+
     .main1 button{
         margin: 10px;
         width: 100%;
-        height: 50px;
-        background-color: skyblue;
+        height: 30px;
+        background-color: #007bff;
         border-radius: 20px;
         font-size: 20px;
-        margin-top: 30px;
+        margin-top: 15px;
         color: black;
     }
     .main1 button:hover{
@@ -79,18 +300,18 @@ body {
     }
 
     .main1 .input-group label {
-        margin-right: 10px;
+        
         color: black;
     }
 
     .main1 .input-group input {
         flex: 1;
-        height: 50px;
+        height: 30px;
         border-radius: 10px;
     }
     .main1 input{
     background-color: lightgrey;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 10px;
     border: 1px solid black;
     margin-top: 10px;
@@ -103,24 +324,25 @@ body {
         
     }
     #main2 #Summary{
-        border: 2px solid black;
-        width: 80%;     
-        font-size: 30px;
-        margin-right: 100px;
+        /* border: 2px solid black; */
+        width: 90%;     
+        font-size: 15px;
+        /* margin-right: 100px; */
         margin-top: 20px;
         color: black;
         background-color: rgba(162, 181, 220, 0.5);
         padding: 20px;
         border-radius: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 #main2 #Summary span{
-    font-size: 25px;
+    font-size: 15px;
    
 }
 #main2 #Summary input{
     background-color: lightgrey;
-    font-size: 18px;
-    width: 40%;
+    font-size: 15px;
+    width: 50%;
     border-radius: 10px;
     border: 1px solid black;
     height: 30px;
@@ -128,18 +350,9 @@ body {
 }
 #main2 #Summary button{
     background-color: rgb(113, 142, 210);
-    font-size: 18px;
-    width: 40%;
-    margin-left: 264px;
-    border-radius: 10px;
-    border: 1px solid black;
-    height: 30px;
-    margin-top: 10px;
-}
-#main2 #Summary select{
-    background-color: lightgrey;
-    font-size: 18px;
-    width: 40%;
+    font-size: 15px;
+    width: 50%;
+    margin-left: 46%;
     border-radius: 10px;
     border: 1px solid black;
     height: 30px;
@@ -148,48 +361,323 @@ body {
 
 #Summary h3{
     text-align: center;
+    margin-bottom: 15px;
 }
 .location{
-    margin-right: 120px;
+    margin-right: 28%;
 }
 .price{
-    margin-right: 10px;
+    margin-right: 14%;
 }
 .guest{
-    margin-right: 91px;
+    margin-right: 25%;
 }
 .gst{
-    margin-right: 31%;
+    margin-right: 32%;
 }
 .total{
-    margin-right: 99px;
+    margin-right: 26%;
 }
 .coupon{
-    margin-right: 90px;
+    margin-right: 24%;
 }
 .final{
-    margin-right: 25px;
+    margin-right: 15%;
 }
 
 
 
 #main2 #offer{
-        border: 2px solid black;
-        width: 80%;     
+        /* border: 2px solid black; */
+        width: 90%;     
         margin-right: 100px;
         color: black;
         background-color: rgba(208, 219, 50, 0.5);
         padding: 20px;
         border-radius: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#offer p{
+    margin-top:20px;
+    font-size: 15px;
 }
 
 #offer div{
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
+}
+
+/* Responsive Design CSS */
+@media (max-width: 1000px) {
+    .navbar .links {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+    .dropdown_menu .flex {
+        display: flex;
+        gap: 1vh;
+    }
+    #main{
+        grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+    #main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    body footer {
+        padding: 2rem 1rem 0 1rem;
+    }
+}
+
+footer {
+    padding: 1.5rem 0 0 0;
+    background-color: var(--background);
+}
+
+@media screen and (max-width: 1050px) {
+    body footer .container {
+        padding: 0 1rem;
+        width: 100%;
+    }
+}
+
+footer .container {
+    /* width: min(100%, 65rem); */
+    width: 90%;
+    margin: auto;
+}
+
+footer .container>div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials,
+footer .container .newsletter {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials {
+    border-right: 1px solid var(--paragraph);
+    padding-right: 2rem;
+}
+
+@media screen and (max-width: 635px) {
+
+    footer .container .socials,
+    footer .container .newsletter {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+}
+
+footer h3 {
+    font-size: var(--h3);
+    margin-bottom: 1rem;
+    color: var(--headings);
+}
+
+footer .container h3 {
+    font-size: var(--h3);
+    line-height: 1.2;
+    padding-bottom: 0;
+    max-width: 50%;
+}
+
+footer .container .socials div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials div>a {
+    background-color: white;
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+
+footer .container .newsletter {
+    padding-left: 2rem;
+    position: relative;
+}
+
+@media screen and (max-width: 1050px) {
+    footer .container .newsletter input {
+        padding: 0.75rem;
+    }
+}
+
+footer .container .newsletter input {
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+}
+
+@media screen and (max-width: 1050px) {
+    footer .container .newsletter img {
+        height: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    body footer .container .newsletter img {
+        height: 2.5rem;
+        position: absolute;
+        left: 90%;
+        right: 0;
+        bottom: 4%;
+    }
+}
+
+footer .container .newsletter img {
+    height: 2.5rem;
+    position: absolute;
+    right: 0;
+}
+
+footer hr {
+    background-color: var(--paragraph);
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1050px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+footer .container>div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2)>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+footer .container>div:nth-of-type(2) img {
+    align-self: flex-start;
+    height: 5rem;
+    width: 5rem;
+}
+
+footer p {
+    color: var(--paragraph);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+footer h4 {
+    font-size: var(--h4);
+    margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2) a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--paragraph);
+    margin-bottom: 0.5rem;
+}
+
+footer .container>div:nth-of-type(3),
+footer .container>div:nth-of-type(3)>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container>div:nth-of-type(3)>div {
+    width: 40%;
+}
+
+footer .container>div:nth-of-type(3)>div img {
+    width: 3rem;
+    max-height: 1rem;
+    justify-self: flex-end;
 }
 
 </style>
 <body>
+   
+    <header>
+        <div class="scroll-tracker"></div>
+        <div class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <div>
+                        <img src="./Ravi_images/logo.PNG" alt="website logo">
+                        <h2>Adventure Travels</h2>
+                    </div>
+                </a>
+            </div>
+            <ul class="links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li>
+                    <div class="login"><button>Login</button></div>
+                </li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li>
+                <div class="login"><button>Login</button></div>
+            </li>
+        </div>
+    </header>
 
    
 
@@ -200,7 +688,7 @@ body {
         <h2> Booking Details </h2>
     <span>Full Name:</span> <input type="text" placeholder="Enter Full Name Here"> <br>
     <span>Email Id:</span> <input type="email" placeholder="Enter Email Id Here"> <br>
-    <span>Contact No.:</span> <input type="number" placeholder="Enter contact No. Here"> <br>
+    <span>Contact No.:</span> <input type="number" max="10" placeholder="Enter contact No. Here"> <br>
    <div class="sub">
     <div class="input-group">
         <label for="age">Age:</label> <br>
@@ -235,21 +723,9 @@ body {
             <h3>Summary of Your Plan </h3>
             <span class="location">Destination : </span> <input id="location" type="text"><br>
             <span class="price">Price Per Person(Rs) : </span> <input id="plan" type="text"><br>
-            <span class="guest">No. of Person : </span>
-            <select name="guest" id="guest">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-             </select> <br>
+            <span class="guest">No. of Person : </span> <input id="guest" type="text"><br>
 
-             <button onclick="calculateTotalAmount()">Calculate</button> <br>
+            <button onclick="calculateTotalAmount()">Calculate</button> <br>
              <span class="gst">GST 5% : </span>
              <input type="text" id="gst"> <br>
             <span class="total">Total Amount : </span> 
@@ -266,17 +742,106 @@ body {
     </div>
     </div>
     
+
+    <footer>
+        <div class="container">
+            <div>
+                <div class="socials">
+                    <h3>Leading the way in adventure</h3>
+                    <div>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+                        </a>
+
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h3>Join Our Newsletter</h3>
+                    <input type="email" placeholder="Enter your e-mail">
+                    <img src="./Ravi_images/cta-btn.png" alt="Submit Icon" onclick="showPopup()">
+                    <div id="popup" class="popup"></div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div>
+                    <img src="./Ravi_images/logo.PNG" alt="Travelo Logo">
+                    <p>
+                        Travell plans are not really an instrument themselves but a
+                        delivery mechanism or strategy for mostly others
+                    </p>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="/">+913134566585</a>
+                    <a href="">info@adventuretravels.com</a>
+                    <a href="">support@adventuretravels.com</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="/">About Us</a>
+                    <a href="">Features</a>
+                    <a href="">Careers</a>
+                </div>
+                <div>
+                    <h4>Resource</h4>
+                    <a href="/">Press Info</a>
+                    <a href="">Customers</a>
+                    <a href="">Reviews</a>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <p>@2023 AdventureTravels | All Rights Reserved</p>
+                <div>
+                    <p>We Accept Payment:</p>
+                    <img src="./Ravi_images/logos_stripe.svg" alt="Stripe Logo">
+                    <img src="./Ravi_images/Paypal.svg" alt="Paypal Logo">
+                    <img src="./Ravi_images/Payonner 1.svg" alt="Payoneer Logo">
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 <script>
-function displayStoredPrice() {
-            const storedPrice = localStorage.getItem("selectedPrice");
-            if (storedPrice !== null) {
-                const priceInput = document.querySelector("#plan");
-                priceInput.value = storedPrice;
-            }
-        }
-        displayStoredPrice();
+
+let LS= localStorage.getItem("bookingData");
+
+let destination= document.querySelector("#location");
+let price= document.querySelector("#plan")
+
+if(LS==null){
+    LS=[];
+}
+else{
+    LS= JSON.parse(LS)
+}
+
+Display(LS)
+
+      function Display(arr){
+        LS.innerHTML= ""
+
+        arr.map((e)=>{
+
+        destination.value = e.name;
+        price.value = e.price;
+        })
+        
+      }
+     
+
 
 
 
@@ -285,6 +850,7 @@ function displayStoredPrice() {
   const pricePerPerson = Number(document.getElementById('plan').value);
   const numberOfPersons = Number(document.getElementById('guest').value);
 
+ 
   // Calculate total amount (price per person * no. of persons) + 5% GST
   const gstPercentage = 5;
   const gstAmount = (pricePerPerson * numberOfPersons * gstPercentage) / 100;
@@ -295,6 +861,9 @@ function displayStoredPrice() {
   // Display the total amount
   document.getElementById('gst').value = Math.floor(gstAmount);
   document.getElementById('totalAmount').value = Math.floor(totalAmount);
+
+//   localStorage.setItem('totalAmountPayable', totalAmount.toFixed());
+   localStorage.setItem('numberOfPersons', numberOfPersons);
   
  }
 
@@ -309,24 +878,51 @@ function displayStoredPrice() {
 
   const totalAmount = Number(totalAmountInput.value);
 
+
   if (totalAmount > 50000 && couponCode === 'Adventure20') {
    
     const discountPercentage = 20;
     const discountAmount = (totalAmount * discountPercentage) / 100;
     const finalAmount = totalAmount - discountAmount;
 
-    finalAmountInput.value = Math.floor(finalAmount);
+    finalAmountInput.value = Math.floor(finalAmount); 
+
+
+    let finalAmountsArray = JSON.parse(localStorage.getItem('finalAmounts')) || [];
+    finalAmountsArray.push(finalAmount);
+
+    localStorage.setItem('finalAmounts', JSON.stringify(finalAmountsArray));
+    
+
+    displayFinalAmounts(finalAmountsArray);
 
     alert('Coupon applied successfully!');
-  } else if(totalAmount < 50000){
+
+
+  } 
+  
+  else if(totalAmount < 50000){ 
     alert('coupon not applicable.');
+
     finalAmountInput.value = Math.floor(totalAmount);
+
+    let finalAmountsArray = JSON.parse(localStorage.getItem('finalAmounts')) || [];
+    finalAmountsArray.push(totalAmount);
+
+    localStorage.setItem('finalAmounts', JSON.stringify(finalAmountsArray));
+    
+
+    displayFinalAmounts(finalAmountsArray);
+
   }
   
   else {    
     alert('Invalid coupon code');
     finalAmountInput.value = Math.floor(totalAmount);
+    
   }
+  
+
 }
 
 
@@ -351,9 +947,13 @@ function validateInputs() {
 const checkoutButton = document.getElementById("checkout");
 checkoutButton.addEventListener("click", () => {
   if (validateInputs()) {
-    alert("Form is ready for submission. Proceed to checkout!");
+    window.location.href = "checkoutPage.html"
+
+   
   }
 });
- 
+
+
+
 </script>
 </html>
