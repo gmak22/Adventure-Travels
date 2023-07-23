@@ -26,11 +26,13 @@ async function fetchURL() {
     }
 }
 
-
+let username1=JSON.parse(localStorage.getItem("username"))||"";
 function checkuser(user){
     for(let i=0; i<user.length; i++){
         if(user[i].username===username.value&&user[i].password===password.value){
-            localStorage.setItem("username",JSON.stringify(username.value));
+           let user=username.value
+            localStorage.setItem("username",JSON.stringify(user));
+            signout(user);
             return true;
         }
     }
@@ -41,4 +43,24 @@ let proceed=document.querySelector(".process");
 proceed.addEventListener("click",(el)=>{
     el.preventDefault();
     fetchURL(); 
+    
 })
+
+let loginuser=document.querySelector(".username")
+function signout(user){
+    if(user.length==0){
+        console.log(username1.length,"#");
+        loginuser.innerHTML="Login";
+       }else{
+           console.log(username1,"@");
+           loginuser.innerHTML=(user.toUpperCase());
+       }
+}
+signout(username1)
+let sign_out=document.querySelector(".sign-out");
+sign_out.addEventListener("click",()=>{
+    let user="";
+    localStorage.setItem("username",JSON.stringify(user));
+    signout(user)
+})
+
