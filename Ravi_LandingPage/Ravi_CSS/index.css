@@ -46,8 +46,8 @@
 }
 
 body {
-    height: 100vh;
-    width: 90%;
+    /* height: 100vh; */
+    width: 95%;
     margin: auto;
 }
 
@@ -106,9 +106,11 @@ header a:hover {
     justify-content: space-between;
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     margin-top: 4vh;
+    background-color: lightgrey;
+    padding: 2rem;
 }
 
 .navbar .links {
@@ -133,7 +135,7 @@ header a:hover {
 
 header {
     position: relative;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
     background-color: #f9f9f9;
 }
 
@@ -274,6 +276,10 @@ header {
     cursor: pointer;
 }
 
+#hero .primary-btn:hover {
+    background-color: orange;
+}
+
 #hero h1+div>div {
     display: flex;
     align-items: center;
@@ -284,6 +290,10 @@ header {
 #hero a {
     cursor: pointer;
     transition: color 0.2s ease-out;
+}
+
+#hero a:hover {
+    color: orange;
 }
 
 #hero h1+div>div>a {
