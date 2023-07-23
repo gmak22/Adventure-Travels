@@ -92,3 +92,15 @@ function checkuser(data){
     return true;
 
 }
+let username1=JSON.parse(localStorage.getItem("username"))||""
+let loginuser=document.querySelector(".username")
+function signout(user){
+    if(user.length==0){
+        console.log(username1.length,"#");
+        loginuser.innerHTML="Login";
+       }else{
+           console.log(username1,"@");
+           loginuser.innerHTML=(user.toUpperCase());
+       }
+}
+signout(username1)
