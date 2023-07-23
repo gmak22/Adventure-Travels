@@ -64,6 +64,7 @@ body {
     background-color: skyblue;
     transform-origin: left;
     z-index: 100;
+    
 }
 
 /* Header CSS */
@@ -109,6 +110,7 @@ header a:hover {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 4vh;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 .navbar .links {
@@ -134,8 +136,10 @@ header a:hover {
 header {
     position: relative;
     padding: 0 1rem;
-    background-color: #f9f9f9;
+    background-color: #f7fdff;
+  
 }
+
 
 /* Dropdown CSS */
 .dropdown_menu {
