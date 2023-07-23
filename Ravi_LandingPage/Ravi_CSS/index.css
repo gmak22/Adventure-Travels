@@ -64,7 +64,7 @@ body {
     background-color: skyblue;
     transform-origin: left;
     z-index: 100;
-    
+
 }
 
 /* Header CSS */
@@ -90,19 +90,22 @@ header a:hover {
     color: orange;
 }
 
-.login {
+.login,
+.sign-out {
     background-color: lightgray;
     cursor: pointer;
+    color: maroon;
     /* position: relative; */
     /* bottom: 3px; */
 }
 
-.login>button {
+.login>a>button,
+.sign-out>a>button {
     background-color: var(--headings);
     color: #fff;
     text-transform: uppercase;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 0.3rem 0.3rem;
     /* margin-bottom: 0.5rem; */
     transition: all 0.2s ease-out;
@@ -112,9 +115,9 @@ header a:hover {
     bottom: 0.2rem;
 }
 
-/* .logo {
-    height: 100%;
-} */
+.loginButton {
+    color: maroon;
+}
 
 .logo div {
     display: flex;
@@ -136,6 +139,9 @@ header a:hover {
     /* max-width: 1200px; */
     margin: 0 auto;
     margin-top: 4vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: lightgray;
 }
 
 .navbar .links {
