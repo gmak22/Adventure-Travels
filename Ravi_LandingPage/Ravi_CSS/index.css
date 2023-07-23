@@ -89,6 +89,32 @@ header a:hover {
     color: orange;
 }
 
+.login {
+    background-color: lightgray;
+    cursor: pointer;
+    /* position: relative; */
+    /* bottom: 3px; */
+}
+
+.login>button {
+    background-color: var(--headings);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    padding: 0.3rem 0.3rem;
+    /* margin-bottom: 0.5rem; */
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    width: 5rem;
+    position: relative;
+    bottom: 0.2rem;
+}
+
+/* .logo {
+    height: 100%;
+} */
+
 .logo div {
     display: flex;
     align-items: center;
@@ -97,7 +123,7 @@ header a:hover {
 }
 
 .logo img {
-    height: 10vh;
+    height: 4rem;
 }
 
 .navbar {
@@ -152,15 +178,16 @@ header {
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
 }
 
 .dropdown_menu.open {
     height: 29vh;
 }
 
-.dropdown_menu.open img {
+/* .dropdown_menu.open img {
     height: 3vh;
-}
+} */
 
 .dropdown_menu li {
     padding: 0.7rem;
@@ -519,6 +546,7 @@ header {
     border-radius: 1rem;
     width: 23%;
     height: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #nature .card .card__background {
@@ -560,6 +588,10 @@ header {
     border-radius: 20px;
     font-size: 0.8rem;
     height: 2rem;
+}
+
+.nature-flex>div p {
+    text-transform: uppercase;
 }
 
 /* Features section CSS */
@@ -646,6 +678,7 @@ header {
     border-radius: 1rem;
     overflow: hidden;
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #features>.container>div>div>img {
@@ -688,10 +721,14 @@ p {
     padding: 5rem 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 920px) {
     #services .container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .image__container {
+        margin-top: 4rem;
     }
 }
 
@@ -717,10 +754,14 @@ p {
     margin: auto;
 }
 
-@media screen and (max-width: 500px) {
-    #services .container>div {
+@media screen and (max-width: 920px) {
+    body #services .container>div {
         width: 100%;
         margin-bottom: 2rem;
+    }
+
+    body #services .container>div>h2 {
+        text-align: center;
     }
 }
 
@@ -779,15 +820,25 @@ p {
 }
 
 @media screen and (max-width: 1050px) {
-    #services .container>.image__container {
+    body #services .container>.image__container {
         height: 30rem;
     }
 }
 
 @media screen and (max-width: 500px) {
-    #services .container>.image__container {
+    body #services .container>.image__container {
         position: relative;
-        height: 25rem;
+        height: 20rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    body #services .container>.image__container>img {
+        object-fit: cover;
+        width: 12rem;
+        height: 12rem;
     }
 }
 
@@ -800,8 +851,15 @@ p {
     width: 50%;
 }
 
+@media screen and (max-width: 900px) {
+    body #services .container>div:nth-child(1) {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
 @media screen and (max-width: 500px) {
-    #services .container>div {
+    body #services .container>div {
         width: 100%;
         margin-bottom: 2rem;
     }
@@ -824,8 +882,8 @@ p {
     .circular__img1 {
         width: 7.5rem;
         height: 7.5rem;
-        left: 10%;
-        top: 10%;
+        left: 5%;
+        top: 5%;
     }
 }
 
@@ -838,10 +896,11 @@ img {
     object-fit: cover;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 900px) {
     .circular__img2 {
         width: 15rem;
         height: 15rem;
+        margin-left: 5rem;
     }
 }
 
@@ -850,8 +909,10 @@ img {
         width: 15rem;
         height: 15rem;
         left: auto;
-        right: 10%;
-        top: 0%;
+        right: 5%;
+        top: 5%;
+        margin-top: 3rem;
+        margin-left: 3rem;
     }
 }
 
@@ -862,7 +923,7 @@ img {
     top: -10%;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 900px) {
     .circular__img3 {
         width: 10rem;
         height: 10rem;
@@ -874,9 +935,10 @@ img {
     .circular__img3 {
         width: 10rem;
         height: 10rem;
-        left: 10%;
-        top: auto;
-        bottom: 10%;
+        left: 5%;
+        bottom: 5%;
+        margin-left: 4rem;
+        margin-top: 6rem;
     }
 }
 
@@ -887,12 +949,23 @@ img {
     top: 40%;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 900px) {
     .circular__img4 {
         width: 5rem;
         height: 5rem;
-        bottom: 25%;
-        right: 27%;
+        bottom: 5%;
+        right: 5%;
+        left: 70%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .circular__img4 {
+        width: 5rem;
+        height: 5rem;
+        bottom: 5%;
+        right: 5%;
+        left: 85%;
     }
 }
 
@@ -900,10 +973,10 @@ img {
     .circular__img4 {
         width: 7.5rem;
         height: 7.5rem;
-        left: auto;
-        top: auto;
-        right: 25%;
-        bottom: 0%;
+        right: 5%;
+        bottom: 5%;
+        top: 70%;
+        left: 50%;
     }
 }
 
@@ -962,9 +1035,11 @@ img {
 @media screen and (max-width: 500px) {
     #plans>.container>div:first-of-type {
         width: 100%;
-        margin: 0 auto 1rem auto;
+        margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
         background-color: #F5C94F;
-        margin-right: 0;
+        /* margin-right: 0; */
     }
 }
 
@@ -972,14 +1047,22 @@ img {
     width: 50%;
     background-color: #F5C94F;
     border-radius: 2rem;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     position: relative;
     z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 @media screen and (max-width: 1050px) {
     #plans>.container>div:first-of-type img {
         width: 110%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #plans>.container>div:first-of-type img {
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -1087,7 +1170,7 @@ img {
 }
 
 #travel .container {
-    width: min(100%, 65rem);
+    width: min(90%, 65rem);
     margin: auto;
     padding-bottom: 3rem;
 }
@@ -1256,7 +1339,8 @@ footer {
 }
 
 footer .container {
-    width: min(100%, 65rem);
+    /* width: min(100%, 65rem); */
+    width: 90%;
     margin: auto;
 }
 
@@ -1371,6 +1455,13 @@ footer hr {
 @media screen and (max-width: 1050px) {
     body footer .container>div:nth-of-type(2) {
         gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+        grid-template-columns: 2fr 1fr;
     }
 }
 
