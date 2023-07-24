@@ -1,35 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdventureTravels</title>
     <link rel="stylesheet" href="./saritacss/adminproduct.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 </head>
+
 <body>
+    <div class="container">
+        <!-- sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="./saritaimage/logo-removebg-preview.png" alt="">
+                    <h2>Adventure<br><span class="danger">Travels</span>
+                        </span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="./Ravi_LandingPage/index.html">
+                    <span class="material-icons-sharp">
+                        home
+                    </span>
+                    <h3>Home</h3>
+                </a>
+                <a href="#" id="alldestinationdata">
+                    <span class="material-icons-sharp">
+                        location_on
+                    </span>
+                    <h3>Destinations</h3>
+                </a>
+                <a href="#" id="allusersdata">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Users</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                    <span class="message-count">27</span>
+                </a>
+                <a href="#" id="add-data-icon">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Add Data</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Login</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
 
 
+        <!-- Main section -->
+        <main>
+            <div id="sevenpx">
+                <span class="material-icons-sharp">
+                    menu
+                </span>
+            </div>
+            <h1>Analytics</h1>
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Total Destination</h3>
+                            <h1 id="totaluser-count"></h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>+100%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visits">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Tample</h3>
+                            <h1 id="totalMale-count"></h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p id="malepercent"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Hill Station</h3>
+                            <h1 id="totalFemale-count"></h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p id="femalepercentage"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Analyses -->
 
 
+            <!-- Recent Orders Table -->
+            <div class="recent-orders">
+                <div id="destinationdatadiv">
+                    <div id="selectnav">
+                        <h2>All Destinations Data</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <!-- <th>Image</th> -->
+                                <th>Price</th>
+                                <th>package</th>
+                                <th>category</th>
+                                <!-- <th>rating</th> -->
+                                <th>rate</th>
+                                <th>Edit data</th>
+                                <th>Delete data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="destbody">
 
-    
-    <!-- <nav>
+                        </tbody>
+                    </table>
+                    <a href="#">Show All</a>
+                </div>
 
-    </nav>
-    <section></section>
-    <table>
-        <thead>
-        <tr><th>Destination</th>
-        <th>package</th>
-    <th>price</th>
-    <th>Edit</th>
-    <th>Delete</th>
-</tr>
-</thead>
-<tbody>
+            </div>
+            <!-- End of Order section -->
+        </main>
+        <!-- end of main section -->
 
-</tbody>
-    </table> -->
+        <!-- right Section -->
+        <div class="right-section">
+
+            <div id="newdatadiv">
+                <p class="form-head">Add New Data
+                <p>
+                <form action="" id="newdata">
+                    <label for="">Location</label>
+                    <label for="">Destination</label><br>
+                    <input type="text" id="newdestination" placeholder="Destination"><br>
+                    <label for="">Price</label><br>
+                    <input type="text" id="newprice" placeholder="price"><br>
+                    <label for="">Package</label><br>
+                    <input type="text" id="newpackage" placeholder="package"><br>
+                    <label for="">Category</label><br>
+                    <input type="text" id="newcategory" placeholder="category"><br>
+                    <label for="">Rate</label><br>
+                    <input type="text" id="newrate" placeholder="rate"><br>
+                    <button id="newdatabtn" class="rightformbtn">Add NewUser</button>
+                </form>
+            </div>
+            <div id="updatadiv">
+                <p class="form-head">Edit Data</p>
+                <form action="" id="updata">
+                    <label for="">Id</label><br>
+                    <input type="text" id="editid"><br>
+                    <label for="">Destination</label><br>
+                    <input type="text" id="editdestination"><br>
+                    <label for="">Price</label><br>
+                    <input type="text" id="editprice"><br>
+                    <label for="">Package</label><br>
+                    <input type="text" id="editpackage"><br>
+                    <label for="">Category</label><br>
+                    <input type="text" id="editcategory"><br>
+                    <label for="">Rate</label><br>
+                    <input type="text" id="editrate"><br>
+                    <button id="editdatabtn" class="rightformbtn">Edit User</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
+
+
+
 <script src="./saritajs/adminproduct.js"></script>
