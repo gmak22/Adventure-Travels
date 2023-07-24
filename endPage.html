@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,234 +8,252 @@
 </head>
 
 <style>
-
-
-:root {
-    --headings: #000000;
-    --background: #ebebeb;
-    --paragraph: #696969;
-    --highlight-light: #f6f6f6;
-    --highlight-dark: #f2f2f2;
-    --waves-color: #d58170;
-    --h1: 5.5rem;
-    --h2: 3.5rem;
-    --h3: 1.75rem;
-    --h4: 1.25rem;
-}
-
-@media screen and (max-width: 635px) {
     :root {
-        --h1: 3.25rem;
-        --h2: 2.75rem;
-        --h3: 1.25rem;
-        --h4: 1rem;
+        --headings: #000000;
+        --background: #ebebeb;
+        --paragraph: #696969;
+        --highlight-light: #f6f6f6;
+        --highlight-dark: #f2f2f2;
+        --waves-color: #d58170;
+        --h1: 5.5rem;
+        --h2: 3.5rem;
+        --h3: 1.75rem;
+        --h4: 1.25rem;
     }
 
-    html {
-        font-size: 12px;
+    @media screen and (max-width: 635px) {
+        :root {
+            --h1: 3.25rem;
+            --h2: 2.75rem;
+            --h3: 1.25rem;
+            --h4: 1rem;
+        }
+
+        html {
+            font-size: 12px;
+        }
     }
-}
 
-@media screen and (max-width: 1050px) {
-    :root {
-        --h1: 4rem;
-        --h2: 2.75rem;
-        --h3: 1.25rem;
-        --h4: 1rem;
+    @media screen and (max-width: 1050px) {
+        :root {
+            --h1: 4rem;
+            --h2: 2.75rem;
+            --h3: 1.25rem;
+            --h4: 1rem;
+        }
+
+        html {
+            font-size: 14px;
+        }
     }
 
-    html {
-        font-size: 14px;
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
     }
-}
 
+    body {
+        height: 100vh;
+        width: 90%;
+        margin: auto;
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+    img {
+        max-width: 100%;
+        display: block;
+    }
 
-body {
-    height: 100vh;
-    width: 90%;
-    margin: auto;
-}
+    /* Scroll tracker CSS */
+    .scroll-tracker {
+        position: fixed;
+        inset: 0 0 auto;
+        height: 0.5rem;
+        background-color: skyblue;
+        transform-origin: left;
+        z-index: 100;
+    }
 
-img {
-    max-width: 100%;
-    display: block;
-}
+    /* Header CSS */
 
-/* Scroll tracker CSS */
-.scroll-tracker {
-    position: fixed;
-    inset: 0 0 auto;
-    height: 0.5rem;
-    background-color: skyblue;
-    transform-origin: left;
-    z-index: 100;
-}
+    header hr {
+        height: 1px;
+        border-width: 0;
+        background-color: grey;
+        margin-top: 3vh;
+    }
 
-/* Header CSS */
+    header li {
+        list-style: none;
+    }
 
-header hr {
-    height: 1px;
-    border-width: 0;
-    background-color: grey;
-    margin-top: 3vh;
-}
+    header a {
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+    }
 
-header li {
-    list-style: none;
-}
+    header a:hover {
+        color: orange;
+    }
 
-header a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-}
+    .logo div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: maroon;
+    }
 
-header a:hover {
-    color: orange;
-}
+    .logo img {
+        height: 4rem;
+    }
 
-.logo div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: maroon;
-}
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        margin-top: 4vh;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        background-color: lightgray;
+    }
 
-.logo img {
-    height: 10vh;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 4vh;
-}
-
-.navbar .links {
-    display: flex;
-    gap: 2rem;
-}
-
-.navbar .toggle_btn {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-}
-
-.navbar .links .flex {
-    display: flex;
-    gap: 1vh;
-}
-
-.navbar .links .flex img {
-    height: 3.5vh;
-}
-
-header {
-    position: relative;
-    padding: 0 1rem;
-    background-color: #f9f9f9;
-}
-
-/* Dropdown CSS */
-.dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 8vh;
-    height: 0;
-    width: 300px;
-    background: rgba(50, 46, 46, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dropdown_menu.open {
-    height: 29vh;
-}
-
-.dropdown_menu.open img {
-    height: 3vh;
-}
-
-.dropdown_menu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown_menu li:hover {
-    color: orange;
-}
-
-/* Responsive Design CSS */
-@media (max-width: 1000px) {
     .navbar .links {
-        display: none;
+        display: flex;
+        gap: 2rem;
     }
 
     .navbar .toggle_btn {
-        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
     }
 
-    .dropdown_menu {    
-        display: block;
-    }
-
-    .dropdown_menu .flex {
+    .navbar .links .flex {
         display: flex;
         gap: 1vh;
     }
-}
 
-@media (max-width: 576px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
+    .navbar .links .flex img {
+        height: 3.5vh;
     }
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+    header {
+        position: relative;
+        padding: 0 1rem;
+        background-color: lightgray;
+    }
 
-body {
-    height: 100vh;
-    width: 90%;
-    margin: auto;
-    background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
-    /* //background-color: rgb(178, 225, 225); */
+    /* Dropdown CSS */
+    .dropdown_menu {
+        display: none;
+        position: absolute;
+        right: 2rem;
+        top: 8vh;
+        height: 0;
+        width: 300px;
+        background: rgba(50, 46, 46, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dropdown_menu.open {
+        height: 29vh;
+    }
+
+    .dropdown_menu.open img {
+        height: 3vh;
+    }
+
+    .dropdown_menu li {
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown_menu li:hover {
+        color: orange;
+    }
+
+    /* Responsive Design CSS */
+    @media (max-width: 1000px) {
+        .navbar .links {
+            display: none;
+        }
+
+        .navbar .toggle_btn {
+            display: block;
+        }
+
+        .dropdown_menu {
+            display: block;
+        }
+
+        .dropdown_menu .flex {
+            display: flex;
+            gap: 1vh;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .dropdown_menu {
+            left: 2rem;
+            width: unset;
+        }
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        width: 90%;
+        margin: auto;
+        background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
+        /* //background-color: rgb(178, 225, 225); */
         color: black;
-}
-    h1{
+    }
+
+    h1 {
         text-align: center;
         font-size: 40px;
         margin-top: 100px;
         color: black;
     }
-    h2{
+
+    h2 {
         text-align: center;
-        font-size: 80px;     
+        font-size: 80px;
+    }
+
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    .login,
+    .sign-out {
+        background-color: lightgray;
+        cursor: pointer;
+        color: maroon;
+        font-weight: bolder;
+        /* position: relative; */
+        /* bottom: 3px; */
     }
 </style>
+
 <body>
 
     <header>
@@ -243,42 +262,42 @@ body {
             <div class="logo">
                 <a href="./index.html">
                     <div>
-                        <img src="logo.PNG" alt="website logo">
-                        <p>Adventure Travels</p>
+                        <img src="./Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
+                        <h2>Adventure Travels</h2>
                     </div>
                 </a>
             </div>
             <ul class="links">
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="Ravi_LandingPage/index.html">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Destinations</a></li>
+                <li><a href="./../destinations.html">Destinations</a></li>
                 <li><a href="#">Reviews</a></li>
-                <li><a href="#">
-                        <div class="flex">Contact Us <img src="./Ravi_images/cta-btn.png" alt="arrowMark"></div>
-                    </a></li>
+                <li>
+                    <div class="login">Login</div>
+                </li>
+                <li>
+                    <div class="sign-out">Sign-out</div>
+                </li>
             </ul>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <div class="dropdown_menu">
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="./Ravi_LandingPage/index.html">Home</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Destinations</a></li>
+            <li><a href="./destinations.html">Destinations</a></li>
             <li><a href="#">Reviews</a></li>
-            <li><a href="#">
-                    <div class="flex">Contact Us <img src="./Ravi_images/cta-btn.png" alt="arrowMark"></div>
-                </a></li>
+            <li>
+                <div class="login"><a href="./../Sign-In/Login.html"><button>Login</button></a></div>
+            </li>
         </div>
     </header>
 
-    <h1>Susscessfully Booked</h1>
+    <h1>Successfully Booked</h1>
     <h2>✅</h2>
 </body>
 
-<script>
+<script src="./endPage.js" type="module"></script>
 
-
-    
-</script>
 </html>
