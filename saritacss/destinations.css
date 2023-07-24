@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#placeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.placeCard {
+    display: flex;
+    width: 100%;
+    height: 180px;
+    margin: 10px;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.placeImage {
+    width: 30%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+}
+
+.placeCard img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/3;
+}
+
+.placeDesc {
+    width: 50%;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.placeDesc h3 {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.placeDesc> :nth-child(2) {
+    width: 97%;
+    height: 40%;
+    overflow: hidden;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.placeDesc> :nth-child(3) {
+    margin: 10px 0;
+}
+
+.placePkg {
+    display: flex;
+    gap: 40px;
+}
+
+.placePkg>p {
+    border: 1px solid rgb(0, 0, 0);
+    margin: 0;
+}
+
+.placePkg {
+    display: flex;
+}
+
+.placePkg>p {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.placePrice {
+    background-color: aliceblue;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookBtn {
+    background-color: rgb(46, 46, 145);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 70%;
+    cursor: pointer;
+}
+
+.bookBtn:hover {
+    background-color: transparent;
+    color: rgb(46, 46, 145);
+}
+
+#placeSection {
+    width: 60vw;
+    margin: auto;
+}
+
+#stateSection {
+    width: 16vw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: lightblue;
+}
+
+main {
+    display: flex;
+}
+
+/* Filter by price range */
+#filterRange {
+    position: fixed;
+    height: 100vh;
+    background-color: #e2d9d9;
+    top: 0;
+    left: 10px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.radio-label:hover {
+    background-color: #e6e6e6;
+}
+
+.radio-input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-input:checked+.radio-label {
+    background-color: #ffc3c3;
+    border-color: #ff1111;
+}
+
+.radio-input:focus+.radio-label {
+    outline: 2px solid #ff1111;
+}
+
+.radio-inner-circle {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #888;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    transition: border-color 0.2s;
+    position: relative;
+}
+
+.radio-label:hover .radio-inner-circle {
+    border-color: #555;
+}
+
+.radio-input:checked+.radio-label .radio-inner-circle {
+    border-color: #ff1111;
+}
+
+.radio-input:checked+.radio-label .radio-inner-circle::after {
+    content: '';
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #ff1111;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Sort */
+#sortByPrice {
+    width: 100%;
+
+}
+
+#searchForm {
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    margin: auto;
+}
+
+#search {
+    width: 70%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* States */
+#stateContainer {
+    height: calc(100vh - 70px);
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+#stateContainer::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, rgb(39, 8, 173), rgb(32, 10, 155));
+    border-radius: 500px;
+}
+
+#stateContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+#stateContainer::-webkit-scrollbar-track {
+    display: none;
+}
+
+#stateContainer {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    text-align: center;
+    /* border: 3px solid rebeccapurple; */
+}
+
+#stateContainer>div>img {
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: 4/3;
+}
+
+
+#stateContainer>div {
+    transition: transform 0.4s;
+    transition: all 0.4s ease-in;
+}
+
+#stateContainer>div:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(1.05);
+    border-radius: 10px;
+    /* transition: all 0.8s ease-in; */
+}
+
+.stateCard {
+    width: 90%;
+    /* border: 2px solid rgb(128, 0, 0); */
+    padding: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.stateCard h3 {
+    position: absolute;
+    bottom: 0;
+    width: fit-content;
+    color: #e6e6e6;
+    font-size: 1.3em;
+    text-shadow: 2px 2px black;
+    width: 100%;
+    background-color: transparent;
+}
+
+.stateCard h3:hover {
+    background-color: blue;
+}
+
+#stateSection h1,
+#placeSection h1 {
+    width: 90%;
+    margin: 10px auto;
+}
