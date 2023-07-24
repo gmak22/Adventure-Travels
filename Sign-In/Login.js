@@ -19,7 +19,6 @@ async function fetchURL() {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'ENTER CURRECT CREDIENCIAL',
-
             })
         }
     }
@@ -32,6 +31,9 @@ let username1 = JSON.parse(localStorage.getItem("username")) || "";
 function checkuser(user) {
     for (let i = 0; i < user.length; i++) {
         if (user[i].username === username.value && user[i].password === password.value) {
+            if (username.value === "admin" && password.value === "admin") {
+                window.location.href = "./../adminuser.html";
+            }
             let user = username.value
             localStorage.setItem("username", JSON.stringify(user));
             signout(user);
@@ -49,14 +51,11 @@ proceed.addEventListener("click", (el) => {
 })
 
 let loginuser = document.querySelector(".username")
-
+let sign_out = document.querySelector(".sign-out");
 function signout(user) {
     if (user.length == 0) {
         console.log(username1.length, "#");
         loginuser.innerHTML = "Login";
-}
-signout(username1)
-let sign_out = document.querySelector(".sign-out");
         sign_out.innerHTML = "";
         loginuser.addEventListener("click", () => { window.location.href = "./../../Sign-In/Login.html" });
     } else {
