@@ -45,19 +45,21 @@ proceed.addEventListener("click",(el)=>{
     fetchURL(); 
     
 })
+let sign_out=document.querySelector(".sign-out");
 
 let loginuser=document.querySelector(".username")
 function signout(user){
     if(user.length==0){
         console.log(username1.length,"#");
         loginuser.innerHTML="Login";
+        sign_out.innerHTML="";
        }else{
            console.log(username1,"@");
            loginuser.innerHTML=(user.toUpperCase());
        }
 }
 signout(username1)
-let sign_out=document.querySelector(".sign-out");
+
 sign_out.addEventListener("click",()=>{
     let user="";
     localStorage.setItem("username",JSON.stringify(user));
