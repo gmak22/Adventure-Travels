@@ -208,6 +208,7 @@ main {
     border-radius: 15px;
 }
 
-#stateSection h1, #placeSection h1 {
+#stateSection h1,
+#placeSection h1 {
     text-align: center;
 }
