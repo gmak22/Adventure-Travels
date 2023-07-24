@@ -49,17 +49,24 @@ proceed.addEventListener("click", (el) => {
 })
 
 let loginuser = document.querySelector(".username")
+
 function signout(user) {
     if (user.length == 0) {
         console.log(username1.length, "#");
         loginuser.innerHTML = "Login";
-    } else {
-        console.log(username1, "@");
-        loginuser.innerHTML = (user.toUpperCase());
-    }
 }
 signout(username1)
 let sign_out = document.querySelector(".sign-out");
+        sign_out.innerHTML = "";
+        loginuser.addEventListener("click", () => { window.location.href = "./../../Sign-In/Login.html" });
+    } else {
+        console.log(username1, "@");
+        loginuser.innerHTML = (user.toUpperCase());
+        sign_out.innerHTML = "Sign-out";
+    }
+}
+signout(username1)
+
 sign_out.addEventListener("click", () => {
     let user = "";
     localStorage.setItem("username", JSON.stringify(user));
