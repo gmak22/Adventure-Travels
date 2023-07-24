@@ -1,17 +1,35 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Filter */
 #filterRange {
     position: static;
-    background-color: aqua;
     width: auto;
     height: 8vh;
     display: flex;
-    gap: 40px;
-    justify-content: flex-end;
+    gap: 50px;
+    justify-content: center;
     order: 1;
     align-items: center;
+    margin-bottom: 5px;
+}
+
+#filterRange>div {
+    width: 100%;
+    display: flex;
 }
 
 .filterImg {
-    width: 25px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+.resetImg {
+    width: 30px;
+    height: 30px;
 }
 
 .filterIcon,
@@ -21,11 +39,22 @@
     height: 100%;
     margin: 0;
     margin-inline: 20px;
-    border: 2px solid red;
+}
+
+#filterDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    margin: 0;
+}
+
+#filterDiv>div:first-child {
+    gap: 10px;
+    margin: 0;
 }
 
 .radio-group {
-    background-color: blue;
     padding: 5px;
     position: fixed;
     z-index: 100;
@@ -34,37 +63,20 @@
     transform: translate(-50%, -50%);
 }
 
-#stateSection {
-    position: static;
-    background-color: rgb(229, 231, 226);
-    width: auto;
-    height: auto;
-    order: 2;
-    display: none;
-}
-
-
-
-main {
-    display: flex;
-    flex-direction: column;
-}
-
 .sortDiv {
-    width: 35%;
+    min-width: 25%;
     height: 50%;
     margin-right: 20px;
-
 }
 
-#sortByPrice {
+#sortByPrice,
+#filterDiv {
     width: 100%;
-    height: 100%;
+    height: 40px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 #sortByPrice option {
@@ -77,24 +89,69 @@ main {
     display: none;
 }
 
+/* Place Section */
 #placeSection {
     order: 3;
-    width: 100vw;
+    width: 100%;
     margin: auto;
 }
 
 .placeCard {
-    width: 90%;
-    border: 2px solid saddlebrown;
+    width: 100%;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "one two"
+        "one two"
+        "one three";
+    background-color: #dbf2f7;
+}
 
+.placeImage {
+    width: 95%;
+    grid-area: one;
+}
+
+.placeImage img {
+    width: 100%;
+}
+
+.placeDesc {
+    grid-area: two;
+    width: 100%;
+}
+
+.placePrice {
+    justify-content: center;
+    align-items: center;
+    grid-area: three;
+    width: 100%;
+    padding: 0;
+    margin: 0%;
+    gap: 0;
+}
+
+.placeDesc> :nth-child(2) {
+    -webkit-line-clamp: 1;
+}
+
+.placePrice h4 {
+    width: 50%;
 }
 
 #searchForm {
-    width: 100vw;
-    background-color: brown;
+    width: 100%;
 }
 
-/* states scroll */
+/* State Section */
+#stateSection {
+    position: static;
+    background-color: rgb(229, 231, 226);
+    width: auto;
+    height: auto;
+    order: 2;
+}
 
 #stateSection::before {
     position: absolute;
@@ -149,4 +206,8 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+}
+
+#stateSection h1, #placeSection h1 {
+    text-align: center;
 }

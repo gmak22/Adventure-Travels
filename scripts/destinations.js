@@ -1,22 +1,57 @@
 const API = `https://correct-api-destination.onrender.com/destination`;
 
 let bookData = JSON.parse(localStorage.getItem("bookingData")) || [];
+let loginData = JSON.parse(localStorage.getItem("username")) || [];
 
 let stateContainer = document.getElementById("stateContainer");
 let placeContainer = document.getElementById("placeContainer");
 let sortByPrice = document.getElementById("sortByPrice");
 
+//Loader
+let filterRange = document.querySelector("#filterRange");
+let placeSection = document.querySelector("#placeSection");
+let stateSection = document.querySelector("#stateSection");
+let footer = document.querySelector("footer");
+let loader = document.querySelector(".loader");
+
+function hideContent() {
+  filterRange.style.display = "none";
+  placeSection.style.display = "none";
+  stateSection.style.display = "none";
+  footer.style.display = "none";
+}
+
+function showContent() {
+  filterRange.style.display = "block";
+  placeSection.style.display = "block";
+  stateSection.style.display = "block";
+  footer.style.display = "flex";
+}
+
+function hideLoader() {
+  loader.style.display = "none";
+}
+
+function showLoader() {
+  loader.style.display = "flex";
+}
+
 //Fetching Data 
 async function fetchData(URL) {
   try {
+    hideContent();
+    showLoader();
     let res = await fetch(URL);
     let data = await res.json();
-    console.log(data);
+    //console.log(data);
     displayStates(data);
     displayPlaces(data);
+    showContent();
+    hideLoader();
   }
   catch (err) {
     console.log(err);
+    hideContent();
   }
 }
 
@@ -28,14 +63,8 @@ function displayStates(data) {
 
   data.forEach(element => {
     let stateCard = document.createElement("div");
-    stateCard.className = "stateCard"
-
-    let location = document.createElement("h3");
-    location.textContent = element.location;
-
-    let image = document.createElement("img");
-    image.src = element.img;
-    image.addEventListener("click", () => {
+    stateCard.className = "stateCard";
+    stateCard.addEventListener("click", () => {
       let stateArray = []
       data.filter((a) => {
         if (a.id === element.id) {
@@ -45,6 +74,12 @@ function displayStates(data) {
         }
       })
     })
+
+    let location = document.createElement("h3");
+    location.textContent = element.location;
+
+    let image = document.createElement("img");
+    image.src = element.img;
 
     stateCard.append(image, location);
     stateContainer.append(stateCard);
@@ -99,26 +134,35 @@ function createPlace(data) {
     let card_price = document.createElement("div");
     card_price.className = "placePrice"
 
-    let price = document.createElement("h3");
+    let price = document.createElement("h4");
     price.innerText = `Rs. ${item.price}\nPer person`;
 
     let bookBtn = document.createElement("button");
     bookBtn.innerText = "Book Now";
     bookBtn.className = "bookBtn";
     bookBtn.addEventListener("click", () => {
-      let obj = {
-        name: item.name,
-        price: item.price,
-        package: item.package
+      var count = 0;
+      count++;
+      if (loginData.length > 0) {
+        let obj = {
+          name: item.name,
+          price: item.price,
+          package: item.package,
+          image: item.image,
+        }
+
+        //Checking if the place with the same name and price already exists in bookData array
+        const isAlreadyBooked = bookData.some((bookedItem) => bookedItem.name === obj.name && bookedItem.price === obj.price);
+
+        if (!isAlreadyBooked) {
+          bookData.push(obj);
+          localStorage.setItem("bookingData", JSON.stringify(bookData));
+          window.location.href = "checkout.html"
+        }
       }
 
-      //Checking if the place with the same name and price already exists in bookData array
-      const isAlreadyBooked = bookData.some((bookedItem) => bookedItem.name === obj.name && bookedItem.price === obj.price);
-
-      if (!isAlreadyBooked) {
-        bookData.push(obj);
-        localStorage.setItem("bookingData", JSON.stringify(bookData));
-        //window.location.href = "./booking.html"
+      else {
+        alert("Please log-in first!")
       }
     })
 
@@ -165,7 +209,7 @@ search.addEventListener("input", () => {
             console.log(err);
           });
       }
-    }, 100);
+    }, 500);
   }
 });
 
@@ -213,31 +257,62 @@ sortByPrice.addEventListener("change", function () {
   }
 })
 
-let filterImg = document.querySelector(".filterImg");
-let radioGroup = document.querySelector(".radio-group");
-let radioInputs = document.querySelectorAll(".radio-input");
+function hideContentNew() {
+  placeSection.style.display = "none";
+  stateSection.style.display = "none";
+  footer.style.display = "none";
+}
 
-filterImg.addEventListener('click', open);
-window.addEventListener('click', outsideClick);
+function showContentNew() {
+  placeSection.style.display = "block";
+  stateSection.style.display = "block";
+  footer.style.display = "flex";
+}
 
-function open() {
-  if (radioGroup.style.display === 'flex') {
-    close();
-  } else {
-    radioGroup.style.display = 'flex';
+// Filter by price range
+let one = document.getElementById("radio1");
+let two = document.getElementById("radio2");
+let three = document.getElementById("radio3");
+let four = document.getElementById("radio4");
+let five = document.getElementById("radio5");
+
+one.addEventListener("click", () => { prices(1000, 9999) })
+two.addEventListener("click", () => { prices(10000, 19999) })
+three.addEventListener("click", () => { prices(20000, 29999) })
+four.addEventListener("click", () => { prices(30000, 39999) })
+five.addEventListener("click", () => { prices(40000, 59999) })
+
+function prices(a, b) {
+  hideContentNew();
+  let filteredPriceData = [];
+  for (let y = 1; y <= 11; y++) {
+    fetch(`${API}/${y}`)
+      .then(response => response.json())
+      .then(data => {
+        data.place.forEach((elm) => {
+          if (elm["price"] >= a && elm["price"] <= b) {
+            filteredPriceData.push(elm);
+            console.log(filteredPriceData);
+          }
+        })
+        showContentNew();
+        hideLoader();
+        displayNewPlaces(filteredPriceData);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 }
 
-function close() {
-  radioGroup.style.display = 'none';
-}
+let radioInp = document.querySelector(".radio-input")
+let resetImg = document.querySelector(".resetImg")
+resetImg.addEventListener("click", () => {
+  fetchData(API)
+  radioInp.value = null;
+})
 
-function outsideClick(e) {
-  if (!radioGroup.contains(e.target) && e.target !== filterImg) {
-    close();
-  }
+const maxScreen = 768;
+if(window.innerWidth < maxScreen){
+  filterRange.style.display = "flex";
 }
-
-radioInputs.forEach(function (input) {
-  input.addEventListener('click', close);
-});
