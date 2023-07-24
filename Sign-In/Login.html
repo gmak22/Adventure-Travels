@@ -2,85 +2,166 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" href="./../Register/register.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="Login.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- <link rel="stylesheet" href="./../Register/register.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="./../Ravi_LandingPage/Ravi_CSS/index.css"> -->
+  <link rel="stylesheet" href="Login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+  .container{
+    margin-top: 20px;
+  }
+  footer{
+    margin-top: 40px;
+  }
+  .username{
+      color:#800000 ;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow',Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    }
+</style>
 </head>
 
- <body> 
-    <header>
-        <div class="scroll-tracker"></div>
-        <div class="navbar">
-          <div class="logo">
-            <a href="./index.html">
-              <div id="logo_img">
-                <img src="./../Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
-                <h2>Adventure Travels</h2>
-              </div>
+<body>
+  <header>
+    <div class="scroll-tracker"></div>
+    <div class="navbar">
+      <div class="logo">
+        <a href="./index.html">
+          <div id="logo_img">
+            <img src="./../Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
+            <h2>Adventure Travels</h2>
+          </div>
+        </a>
+      </div>
+      <ul class="links">
+        <li><a href="./../Ravi_LandingPage/index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="./../Sign-In/Login.html" class="username">Login </a></li>
+        <li><a href="#" class="sign-out">Sign-Out</a></li>
+
+
+      </ul>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><a href="./../index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">
+          <div class="flex">Contact Us <img src="./../Ravi_LandingPage/Ravi_images/cta-btn.png" alt="arrowMark"></div>
+        </a></li>
+    </div>
+
+  </header>
+
+  <div id="Register-box">
+
+    <div id="registerh3">
+      <h4>Login with The Adventure Travels</h4>
+    </div>
+    <div class="login_register_btn">
+      <a href="Login.html" class="login"><button class="login">Sign-In</button></a>
+
+      <a href="./../Register/register.html" class="register"><button class="register">Sign-Up</button></a>
+    </div>
+
+
+    <div id="registerinput">
+      <h3>-OR-</h3>
+      <form action="">
+        <input type="text" placeholder="Enter Username" id="username">
+        <input type="password" placeholder="Enter Password" id="password">
+        <!-- <input type="submit" value="PROCEED" id="process"> -->
+        <button class="process">PROCEED</button>
+      </form>
+      <span class="registerspan">New User? <a href="./../Register/register.html" id="regilogin">Create
+          Account</a> </span>
+    </div>
+
+
+  </div>
+  <footer>
+    <div class="container">
+      <div>
+        <div class="socials">
+          <h3>Leading the way in adventure</h3>
+          <div>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+            </a>
+
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-youtube" style="color: #000000;"></i>
             </a>
           </div>
-          <ul class="links">
-            <li><a href="./../Ravi_LandingPage/index.html">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Destinations</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="./../Sign-In/Login.html" class="username">Login </a></li>
-            <li><a href="#" class="sign-out">Sign-Out</a></li>
-    
-    
-          </ul>
-          <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
-          </div>
         </div>
-        <div class="dropdown_menu">
-          <li><a href="./../index.html">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Destinations</a></li>
-          <li><a href="#">Reviews</a></li>
-          <li><a href="#">
-              <div class="flex">Contact Us <img src="./../Ravi_LandingPage/Ravi_images/cta-btn.png" alt="arrowMark"></div>
-            </a></li>
+        <div class="newsletter">
+          <h3>Join Our Newsletter</h3>
+          <input type="email" placeholder="Enter your e-mail">
+          <img src="./../Ravi_LandingPage/Ravi_images/cta-btn.png" alt="Submit Icon" onclick="showPopup()">
+          <div id="popup" class="popup"></div>
         </div>
-    
-      </header>
-    
-     <div id="Register-box"> 
-
-        <div id="registerh3">
-            <h4>Login with The Adventure Travels</h4>
+      </div>
+      <hr>
+      <div>
+        <div>
+          <img src="./../Ravi_LandingPage/Ravi_images/logo.PNG" alt="Travelo Logo">
+          <p>
+            Travell plans are not really an instrument themselves but a
+            delivery mechanism or strategy for mostly others
+          </p>
         </div>
-        <div class="login_register_btn">
-            <a href="Login.html" class="login"><button class="login">Sign-In</button></a>
-            
-            <a href="./../Register/register.html" class="register"><button class="register">Sign-Up</button></a>
+        <div>
+          <h4>Contact</h4>
+          <a href="/">+913134566585</a>
+          <a href="">info@adventuretravels.com</a>
+          <a href="">support@adventuretravels.com</a>
         </div>
-
-        
-            <div id="registerinput">
-                <h3>-OR-</h3>
-                <form action="">
-                    <input type="text" placeholder="Enter Username" id="username">
-                    <input type="password" placeholder="Enter Password" id="password">
-                    <!-- <input type="submit" value="PROCEED" id="process"> -->
-                    <button class="process">PROCEED</button>
-                </form>
-                <span class="registerspan">New User? <a href="./../Register/register.html" id="regilogin">Create
-                    Account</a> </span>
-            </div>
-               
-            
+        <div>
+          <h4>Company</h4>
+          <a href="/">About Us</a>
+          <a href="">Features</a>
+          <a href="">Careers</a>
+        </div>
+        <div>
+          <h4>Resource</h4>
+          <a href="/">Press Info</a>
+          <a href="">Customers</a>
+          <a href="">Reviews</a>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <p>@2023 AdventureTravels | All Rights Reserved</p>
+        <div>
+          <p>We Accept Payment:</p>
+          <img src="./../Ravi_LandingPage/Ravi_images/logos_stripe.svg" alt="Stripe Logo">
+          <img src="./../Ravi_LandingPage/Ravi_images/Paypal.svg" alt="Paypal Logo">
+          <img src="./../Ravi_LandingPage/Ravi_images/Payonner 1.svg" alt="Payoneer Logo">
+        </div>
+      </div>
     </div>
-    <script src="Login.js"></script>
-  
+  </footer>
+  <script src="Login.js"></script>
+
+
 </body>
 
 </html>
-

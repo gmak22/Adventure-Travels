@@ -1,3 +1,15 @@
+:root {
+    --headings: #000000;
+    --background: #ebebeb;
+    --paragraph: #696969;
+    --highlight-light: #f6f6f6;
+    --highlight-dark: #f2f2f2;
+    --waves-color: #d58170;
+    --h1: 5.5rem;
+    --h2: 3.5rem;
+    --h3: 1.75rem;
+    --h4: 1.25rem;
+}
 #Register-box {
     /* border: 1px solid red; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -303,4 +315,204 @@ header {
 
 #hero {
     background-color: var(--background);
+}
+
+@media screen and (max-width: 1050px) {
+    body footer {
+        padding: 2rem 1rem 0 1rem;
+    }
+}
+
+footer {
+    padding: 1.5rem 0 0 0;
+    background-color: var(--background);
+}
+
+@media screen and (max-width: 1050px) {
+    body footer .container {
+        padding: 0 1rem;
+        width: 100%;
+    }
+}
+
+footer .container {
+    /* width: min(100%, 65rem); */
+    width: 90%;
+    margin: auto;
+}
+
+footer .container>div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials,
+footer .container .newsletter {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials {
+    border-right: 1px solid var(--paragraph);
+    padding-right: 2rem;
+}
+
+@media screen and (max-width: 635px) {
+
+    footer .container .socials,
+    footer .container .newsletter {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+}
+
+footer h3 {
+    font-size: var(--h3);
+    margin-bottom: 1rem;
+    color: var(--headings);
+}
+
+footer .container h3 {
+    font-size: var(--h3);
+    line-height: 1.2;
+    padding-bottom: 0;
+    max-width: 50%;
+}
+
+footer .container .socials div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials div>a {
+    background-color: white;
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+
+footer .container .newsletter {
+    padding-left: 2rem;
+    position: relative;
+}
+
+@media screen and (max-width: 1050px) {
+    footer .container .newsletter input {
+        padding: 0.75rem;
+    }
+}
+
+footer .container .newsletter input {
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+}
+
+@media screen and (max-width: 1050px) {
+    footer .container .newsletter img {
+        height: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    body footer .container .newsletter img {
+        height: 2.5rem;
+        position: absolute;
+        left: 90%;
+        right: 0;
+        bottom: 4%;
+    }
+}
+
+footer .container .newsletter img {
+    height: 2.5rem;
+    position: absolute;
+    right: 0;
+}
+
+footer hr {
+    background-color: var(--paragraph);
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1050px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+footer .container>div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2)>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+footer .container>div:nth-of-type(2) img {
+    align-self: flex-start;
+    height: 5rem;
+    width: 5rem;
+}
+
+footer p {
+    color: var(--paragraph);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+footer h4 {
+    font-size: var(--h4);
+    margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2) a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--paragraph);
+    margin-bottom: 0.5rem;
+}
+
+footer .container>div:nth-of-type(3),
+footer .container>div:nth-of-type(3)>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container>div:nth-of-type(3)>div {
+    width: 40%;
+}
+
+footer .container>div:nth-of-type(3)>div img {
+    width: 3rem;
+    max-height: 1rem;
+    justify-self: flex-end;
 }

@@ -52,7 +52,7 @@ function signout(user){
     if(user.length==0){
         console.log(username1.length,"#");
         loginuser.innerHTML="Login";
-        sign_out.innerHTML="";
+       
        }else{
            console.log(username1,"@");
            loginuser.innerHTML=(user.toUpperCase());
