@@ -1,3 +1,56 @@
+:root {
+    --headings: #000000;
+    --background: #ebebeb;
+    --paragraph: #696969;
+    --highlight-light: #f6f6f6;
+    --highlight-dark: #f2f2f2;
+    --waves-color: #d58170;
+    --h1: 5.5rem;
+    --h2: 3.5rem;
+    --h3: 1.75rem;
+    --h4: 1.25rem;
+}
+
+@media screen and (max-width: 635px) {
+    :root {
+        --h1: 3.25rem;
+        --h2: 2.75rem;
+        --h3: 1.25rem;
+        --h4: 1rem;
+    }
+
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    :root {
+        --h1: 4rem;
+        --h2: 2.75rem;
+        --h3: 1.25rem;
+        --h4: 1rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    /* height: 100vh; */
+    width: 95%;
+    margin: auto;
+}
+
 #Register-box {
     /* border: 1px solid red; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -174,6 +227,7 @@ header a:hover {
     /* max-width: 1200px; */
     margin: 0 auto;
     margin-top: 4vh;
+    background-color: lightgray;
 }
 
 .navbar .links {
@@ -205,11 +259,36 @@ header {
 
 
 /* Dropdown CSS */
+
+.username,
+.sign-out {
+    background-color: lightgray;
+    cursor: pointer;
+    color: maroon;
+    font-weight: bolder;
+}
+
+.flex>a>button,
+.sign-out>a>button {
+    background-color: var(--headings);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.3rem;
+    /* margin-bottom: 0.5rem; */
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    width: 5rem;
+    position: relative;
+    bottom: 0.2rem;
+}
+
 .dropdown_menu {
     display: none;
     position: absolute;
     right: 2rem;
-    top: 8vh;
+    top: 10vh;
     height: 0;
     width: 300px;
     background: rgba(50, 46, 46, 0.1);
