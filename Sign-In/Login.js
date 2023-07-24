@@ -49,11 +49,14 @@ proceed.addEventListener("click", (el) => {
 })
 
 let loginuser = document.querySelector(".username")
-let sign_out = document.querySelector(".sign-out");
+
 function signout(user) {
     if (user.length == 0) {
         console.log(username1.length, "#");
         loginuser.innerHTML = "Login";
+}
+signout(username1)
+let sign_out = document.querySelector(".sign-out");
         sign_out.innerHTML = "";
         loginuser.addEventListener("click", () => { window.location.href = "./../../Sign-In/Login.html" });
     } else {

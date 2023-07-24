@@ -1,94 +1,13 @@
-#Register-box {
-    /* border: 1px solid red; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin: auto;
-    width: 30%;
-    padding: 40px;
-    margin-top: 40px;
-    text-align: center;
-    border-radius: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-.login,
-.register {
-    width: 49%;
-    height: 50px;
-    font-size: 20px;
+<style>
 
-}
-
-.register {
-    background-color: #169ed4;
-    color: white;
-
-    border: 0px;
-}
-#registerinput>h4{
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
-    /* border: 1px solid springgreen; */
-}
-#registerinput {
-
-    width: 100%;
-    background-color: #f1f1f2;
-    /* border: 1px solid rgb(66, 65, 65); */
-    margin: auto;
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    flex-direction: column;
-}
-
-#registerinput>h4 {
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-#registerinput>input {
-    width: 80%;
-    margin: auto;
-    margin-top: 20px;
-    height: 40px;
-    font-size: 16px;
-    border-radius: 10px;
-}
-
-.fistnamelastname {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin: auto;
-}
-
-.fistnamelastname>input {
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
-    height: 40px;
-    font-size: 16px;
-    border-radius: 10px;
-}
-
-.registerspan {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-#regilogin {
-    color: red;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-#submit {
-    background-color: #169ed4;
-    border: 0px;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-}
 
 :root {
     --headings: #000000;
@@ -139,14 +58,14 @@
 
 body {
     height: 100vh;
-    width: 99%;
+    width: 90%;
     margin: auto;
 }
 
-/* img {
+img {
     max-width: 100%;
     display: block;
-} */
+}
 
 /* Scroll tracker CSS */
 .scroll-tracker {
@@ -159,10 +78,6 @@ body {
 }
 
 /* Header CSS */
-
-header {
-    background-color: lightgray;
-}
 
 header hr {
     height: 1px;
@@ -193,21 +108,23 @@ header a:hover {
 }
 
 .logo img {
-    height: 4rem;
+    height: 10vh;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 4vh;
 }
 
 .navbar .links {
     display: flex;
     gap: 2rem;
-    align-items: center;
 }
 
 .navbar .toggle_btn {
@@ -225,16 +142,11 @@ header a:hover {
     height: 3.5vh;
 }
 
-.loginNav,
-.sign-out-nav {
-    background-color: lightgray;
-    cursor: pointer;
-    color: maroon;
-    font-weight: bolder;
-    /* position: relative; */
-    /* bottom: 3px; */
+header {
+    position: relative;
+    padding: 0 1rem;
+    background-color: #f9f9f9;
 }
-
 
 /* Dropdown CSS */
 .dropdown_menu {
@@ -280,7 +192,7 @@ header a:hover {
         display: block;
     }
 
-    .dropdown_menu {
+    .dropdown_menu {    
         display: block;
     }
 
@@ -297,8 +209,76 @@ header a:hover {
     }
 }
 
-/* Hero section CSS */
-
-#hero {
-    background-color: var(--background);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
+
+body {
+    height: 100vh;
+    width: 90%;
+    margin: auto;
+    background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover;
+    /* //background-color: rgb(178, 225, 225); */
+        color: black;
+}
+    h1{
+        text-align: center;
+        font-size: 40px;
+        margin-top: 100px;
+        color: black;
+    }
+    h2{
+        text-align: center;
+        font-size: 80px;     
+    }
+</style>
+<body>
+
+    <header>
+        <div class="scroll-tracker"></div>
+        <div class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <div>
+                        <img src="logo.PNG" alt="website logo">
+                        <p>Adventure Travels</p>
+                    </div>
+                </a>
+            </div>
+            <ul class="links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">
+                        <div class="flex">Contact Us <img src="./Ravi_images/cta-btn.png" alt="arrowMark"></div>
+                    </a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">
+                    <div class="flex">Contact Us <img src="./Ravi_images/cta-btn.png" alt="arrowMark"></div>
+                </a></li>
+        </div>
+    </header>
+
+    <h1>Susscessfully Booked</h1>
+    <h2>✅</h2>
+</body>
+
+<script>
+
+
+    
+</script>
+</html>
