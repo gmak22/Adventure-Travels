@@ -1,7 +1,7 @@
 const API = `https://correct-api-destination.onrender.com/destination`;
 
 let bookData = JSON.parse(localStorage.getItem("bookingData")) || [];
-let loginData = JSON.parse(localStorage.getItem("username")) || [];
+let loginData = JSON.parse(localStorage.getItem("username"));
 
 let stateContainer = document.getElementById("stateContainer");
 let placeContainer = document.getElementById("placeContainer");
@@ -154,17 +154,22 @@ function createPlace(data) {
         //Checking if the place with the same name and price already exists in bookData array
         const isAlreadyBooked = bookData.some((bookedItem) => bookedItem.name === obj.name && bookedItem.price === obj.price);
 
-        if (!isAlreadyBooked) {
+        if (!isAlreadyBooked && loginData.length !== "") {
           bookData.push(obj);
           localStorage.setItem("bookingData", JSON.stringify(bookData));
-          window.location.href = "checkout.html"
+          window.location.href = "./../paymentPage.html";
         }
       }
 
       else {
         alert("Please log-in first!")
       }
-    })
+    });
+
+    let sign_out = document.querySelector(".sign-out");
+    sign_out.addEventListener("click", () => {
+      loginData = JSON.parse(localStorage.getItem("username"));
+    });
 
     card_img.append(img);
     card_pkg.append(package, category);
