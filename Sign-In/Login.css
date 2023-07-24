@@ -162,6 +162,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    height: 100vh;
+    width: 95%;
+    margin: auto;
+}
+
 /* img {
     max-width: 100%;
     display: block;
@@ -180,11 +186,130 @@ body {
 
 /* Header CSS */
 
+header {
+    padding: 0 2rem;
+    background-color: lightgray;
+}
+
 header hr {
     height: 1px;
     border-width: 0;
     background-color: grey;
     margin-top: 3vh;
+}
+
+header li {
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+header a:hover {
+    color: orange;
+}
+
+.logo div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: maroon;
+}
+
+.logo img {
+    height: 4rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    margin-top: 4vh;
+    background-color: lightgray;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar .links .flex {
+    display: flex;
+    gap: 1vh;
+}
+
+.navbar .links .flex img {
+    height: 3.5vh;
+}
+
+header {
+    /* position: relative; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* width: 100%; */
+    /* border: 1px solid red; */
+}
+
+
+/* Dropdown CSS */
+
+.username,
+.sign-out {
+    background-color: lightgray;
+    cursor: pointer;
+    color: maroon;
+    font-weight: bolder;
+}
+
+.flex>a>button,
+.sign-out>a>button {
+    background-color: var(--headings);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.3rem;
+    /* margin-bottom: 0.5rem; */
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    width: 5rem;
+    position: relative;
+    bottom: 0.2rem;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 10vh;
+    height: 0;
+    width: 300px;
+    background: rgba(50, 46, 46, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 29vh;
+}
+
+.dropdown_menu.open img {
+    height: 3vh;
+}
 
 .dropdown_menu li {
     padding: 0.7rem;
@@ -228,4 +353,205 @@ header hr {
 
 #hero {
     background-color: var(--background);
+}
+
+@media screen and (max-width: 1050px) {
+    body footer {
+        padding: 2rem 1rem 0 1rem;
+    }
+}
+
+footer {
+    padding: 1.5rem 0 0 0;
+    background-color: var(--background);
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 1050px) {
+    body footer .container {
+        padding: 0 1rem;
+        width: 100%;
+    }
+}
+
+footer .container {
+    /* width: min(100%, 65rem); */
+    width: 90%;
+    margin: auto;
+}
+
+footer .container>div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials,
+footer .container .newsletter {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials {
+    border-right: 1px solid var(--paragraph);
+    padding-right: 2rem;
+}
+
+@media screen and (max-width: 635px) {
+
+    footer .container .socials,
+    footer .container .newsletter {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+}
+
+footer h3 {
+    font-size: var(--h3);
+    margin-bottom: 1rem;
+    color: var(--headings);
+}
+
+footer .container h3 {
+    font-size: var(--h3);
+    line-height: 1.2;
+    padding-bottom: 0;
+    max-width: 50%;
+}
+
+footer .container .socials div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container .socials div>a {
+    background-color: white;
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+
+footer .container .newsletter {
+    padding-left: 2rem;
+    position: relative;
+}
+
+@media screen and (max-width: 1050px) {
+    footer .container .newsletter input {
+        padding: 0.75rem;
+    }
+}
+
+footer .container .newsletter input {
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+}
+
+@media screen and (max-width: 1050px) {
+    footer .container .newsletter img {
+        height: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    body footer .container .newsletter img {
+        height: 2.5rem;
+        position: absolute;
+        left: 90%;
+        right: 0;
+        bottom: 4%;
+    }
+}
+
+footer .container .newsletter img {
+    height: 2.5rem;
+    position: absolute;
+    right: 0;
+}
+
+footer hr {
+    background-color: var(--paragraph);
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1050px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body footer .container>div:nth-of-type(2) {
+        gap: 1rem;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+footer .container>div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2)>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+footer .container>div:nth-of-type(2) img {
+    align-self: flex-start;
+    height: 5rem;
+    width: 5rem;
+}
+
+footer p {
+    color: var(--paragraph);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+footer h4 {
+    font-size: var(--h4);
+    margin-bottom: 1rem;
+}
+
+footer .container>div:nth-of-type(2) a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--paragraph);
+    margin-bottom: 0.5rem;
+}
+
+footer .container>div:nth-of-type(3),
+footer .container>div:nth-of-type(3)>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .container>div:nth-of-type(3)>div {
+    width: 40%;
+}
+
+footer .container>div:nth-of-type(3)>div img {
+    width: 3rem;
+    max-height: 2rem;
+    justify-self: flex-end;
 }
