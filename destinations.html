@@ -6,79 +6,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adventure Travels</title>
   <link rel="stylesheet" href="styles/destinations.css">
+  <link rel="stylesheet" href="Ravi_LandingPage/Ravi_CSS/index.css">
   <link rel="stylesheet" media="screen and (max-width: 768px)" href="styles/media.css">
 </head>
 
 <body>
   <header>
-    <form action="" id="searchForm">
-      <input type="search" id="search" placeholder="search destination">
-    </form>
+    <div class="scroll-tracker"></div>
+    <div class="navbar">
+      <div class="logo">
+        <a href="./index.html">
+          <div>
+            <img src="Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
+            <h2>Adventure Travels</h2>
+          </div>
+        </a>
+      </div>
+      <ul class="links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li>
+          <div class="login"><button>Login</button></div>
+        </li>
+      </ul>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li>
+        <div class="login"><button>Login</button></div>
+      </li>
+    </div>
   </header>
 
   <main>
     <aside id="filterRange">
-      <h2 class="filterIcon">Filter</h2>
-      <img src="assets/filter.svg" alt="" class="filterImg">
-      <div class="radio-group">
-        <input class="radio-input" name="radio-group" id="radio1" type="radio" value="one">
-        <label class="radio-label" for="radio1">
-          <span class="radio-inner-circle"></span>
-          Rs. 1000 - Rs. 9999
-        </label>
+      <div>
+        <div id="filterDiv">
+          <div>
+            <h2 class="filterIcon">Filter</h2>
+            <img src="assets/reset.svg" alt="" class="resetImg">
+            <img src="assets/filter.svg" alt="" class="filterImg">
+          </div>
 
-        <input class="radio-input" name="radio-group" id="radio2" type="radio" value="two">
-        <label class="radio-label" for="radio2">
-          <span class="radio-inner-circle"></span>
-          Rs. 10000 - Rs. 19999
-        </label>
+          <div class="radio-group">
+            <input class="radio-input" name="radio-group" id="radio1" type="radio" value="one">
+            <label class="radio-label" for="radio1">
+              <span class="radio-inner-circle"></span>
+              Rs. 1000 - Rs. 9999
+            </label>
 
-        <input class="radio-input" name="radio-group" id="radio3" type="radio" value="three">
-        <label class="radio-label" for="radio3">
-          <span class="radio-inner-circle"></span>
-          Rs. 20000 - Rs. 29999
-        </label>
+            <input class="radio-input" name="radio-group" id="radio2" type="radio" value="two">
+            <label class="radio-label" for="radio2">
+              <span class="radio-inner-circle"></span>
+              Rs. 10000 - Rs. 19999
+            </label>
 
-        <input class="radio-input" name="radio-group" id="radio4" type="radio" value="four">
-        <label class="radio-label" for="radio4">
-          <span class="radio-inner-circle"></span>
-          Rs. 30000 - Rs. 39999
-        </label>
+            <input class="radio-input" name="radio-group" id="radio3" type="radio" value="three">
+            <label class="radio-label" for="radio3">
+              <span class="radio-inner-circle"></span>
+              Rs. 20000 - Rs. 29999
+            </label>
 
-        <input class="radio-input" name="radio-group" id="radio5" type="radio" value="five">
-        <label class="radio-label" for="radio5">
-          <span class="radio-inner-circle"></span>
-          Rs. 40000 - Rs. 49999
-        </label>
+            <input class="radio-input" name="radio-group" id="radio4" type="radio" value="four">
+            <label class="radio-label" for="radio4">
+              <span class="radio-inner-circle"></span>
+              Rs. 30000 - Rs. 39999
+            </label>
 
-        <input class="radio-input" name="radio-group" id="radio6" type="radio" value="six">
-        <label class="radio-label" for="radio6">
-          <span class="radio-inner-circle"></span>
-          Rs. 50000 - Rs. 59999
-        </label>
+            <input class="radio-input" name="radio-group" id="radio5" type="radio" value="five">
+            <label class="radio-label" for="radio5">
+              <span class="radio-inner-circle"></span>
+              Rs. 40000 +
+            </label>
+          </div>
+        </div>
+
+        <div class="sortDiv">
+          <h2 class="sortIcon">Sort</h2>
+          <select id="sortByPrice">
+            <option value="" selected>Select Price</option>
+            <option value="Low">Price Low to High</option>
+            <option value="High">Price High to Low</option>
+          </select>
+        </div>
       </div>
-      <div class="sortDiv">
-        <h2 class="sortIcon">Sort</h2>
-        <select id="sortByPrice">
-          <option value="" selected>Select Range</option>
-          <option value="Low">Price Low to High</option>
-          <option value="High">Price High to Low</option>
-        </select>
-      </div>
+
     </aside>
 
     <section id="placeSection">
-      <h1>Popular Places in India</h1>
+      <div>
+        <form action="" id="searchForm">
+          <div>
+            <img src="assets/search.svg" alt="" class="searchImg">
+            <input type="search" id="search" placeholder="Search destination...">
+          </div>
+        </form>
+        <h1>Popular Places in India</h1>
+      </div>
+
       <div id="placeContainer"></div>
     </section>
 
     <aside id="stateSection">
-      <h1>Top States</h1>
-      <div id="stateContainer"></div>
+      <div>
+        <h1>Top States</h1>
+        <div id="stateContainer"></div>
+      </div>
     </aside>
   </main>
 
+  <section class="loader">
+    <div class="dot-spinner">
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+      <div class="dot-spinner__dot"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        <div class="socials">
+          <h3>Leading the way in adventure</h3>
+          <div>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-facebook-f" style="color: #000000;"></i>
+            </a>
+
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-youtube" style="color: #000000;"></i>
+            </a>
+          </div>
+        </div>
+        <div class="newsletter">
+          <h3>Join Our Newsletter</h3>
+          <input type="email" placeholder="Enter your e-mail">
+          <img src="Ravi_LandingPage/Ravi_images/cta-btn.png" alt="Submit Icon" onclick="showPopup()">
+          <div id="popup" class="popup"></div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <div>
+          <img src="Ravi_LandingPage/Ravi_images/logo.PNG" alt="Travelo Logo">
+          <p>
+            Travell plans are not really an instrument themselves but a
+            delivery mechanism or strategy for mostly others
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="/">+913134566585</a>
+          <a href="">info@adventuretravels.com</a>
+          <a href="">support@adventuretravels.com</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/">About Us</a>
+          <a href="">Features</a>
+          <a href="">Careers</a>
+        </div>
+        <div>
+          <h4>Resource</h4>
+          <a href="/">Press Info</a>
+          <a href="">Customers</a>
+          <a href="">Reviews</a>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <p>@2023 AdventureTravels | All Rights Reserved</p>
+        <div>
+          <p>We Accept Payment:</p>
+          <img src="Ravi_LandingPage/Ravi_images/logos_stripe.svg" alt="Stripe Logo">
+          <img src="Ravi_LandingPage/Ravi_images/Paypal.svg" alt="Paypal Logo">
+          <img src="Ravi_LandingPage/Ravi_images/Payonner 1.svg" alt="Payoneer Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="scripts/destinations.js"></script>
+  <script src="Ravi_LandingPage/Ravi_JS/index.js"></script>
 </body>
 
 </html>
