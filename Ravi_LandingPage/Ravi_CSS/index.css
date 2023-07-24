@@ -64,7 +64,7 @@ body {
     background-color: skyblue;
     transform-origin: left;
     z-index: 100;
-    
+
 }
 
 /* Header CSS */
@@ -90,19 +90,23 @@ header a:hover {
     color: orange;
 }
 
-.login {
+.login,
+.sign-out {
     background-color: lightgray;
     cursor: pointer;
+    color: maroon;
+    font-weight: bolder;
     /* position: relative; */
     /* bottom: 3px; */
 }
 
-.login>button {
+.login>a>button,
+.sign-out>a>button {
     background-color: var(--headings);
     color: #fff;
     text-transform: uppercase;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 0.3rem 0.3rem;
     /* margin-bottom: 0.5rem; */
     transition: all 0.2s ease-out;
@@ -111,10 +115,6 @@ header a:hover {
     position: relative;
     bottom: 0.2rem;
 }
-
-/* .logo {
-    height: 100%;
-} */
 
 .logo div {
     display: flex;
@@ -136,6 +136,9 @@ header a:hover {
     /* max-width: 1200px; */
     margin: 0 auto;
     margin-top: 4vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: lightgray;
 }
 
 .navbar .links {
@@ -277,13 +280,13 @@ header {
 }
 
 @media screen and (max-width: 1050px) {
-    .primary-btn {
+    body #hero .primary-btn {
         padding: 0.75rem 1.5rem;
     }
 }
 
 @media screen and (max-width: 635px) {
-    .primary-btn {
+    body #hero .primary-btn {
         padding: 0.5rem 1.5rem;
         font-size: 0.85rem;
     }
@@ -335,11 +338,12 @@ header {
     object-fit: cover;
 }
 
-@media screen and (max-width: 635px) {
-    .hero__content {
+@media screen and (max-width: 980px) {
+    body #hero .hero__content {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        gap: 2rem;
     }
 }
 
@@ -368,7 +372,7 @@ header {
     }
 }
 
-@media screen and (max-width: 635px) {
+@media screen and (max-width: 980px) {
     #hero .hero__content {
         flex-direction: column;
         justify-content: space-between;

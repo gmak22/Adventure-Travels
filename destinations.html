@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adventure Travels</title>
   <link rel="stylesheet" href="styles/destinations.css">
-  <link rel="stylesheet" href="Ravi_LandingPage/Ravi_CSS/index.css">
+  <link rel="stylesheet" href="./Ravi_LandingPage/Ravi_CSS/index.css">
   <link rel="stylesheet" media="screen and (max-width: 768px)" href="styles/media.css">
 </head>
 
@@ -17,18 +17,21 @@
       <div class="logo">
         <a href="./index.html">
           <div>
-            <img src="Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
+            <img src="./Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
             <h2>Adventure Travels</h2>
           </div>
         </a>
       </div>
       <ul class="links">
-        <li><a href="./index.html">Home</a></li>
+        <li><a href="./Ravi_LandingPage/index.html">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Destinations</a></li>
+        <li><a href="./../destinations.html">Destinations</a></li>
         <li><a href="#">Reviews</a></li>
         <li>
-          <div class="login"><button>Login</button></div>
+          <div class="login">Login</div>
+        </li>
+        <li>
+          <div class="sign-out">Sign-out</div>
         </li>
       </ul>
       <div class="toggle_btn">
@@ -41,7 +44,7 @@
       <li><a href="#">Destinations</a></li>
       <li><a href="#">Reviews</a></li>
       <li>
-        <div class="login"><button>Login</button></div>
+        <div class="login"><a href="./../Sign-In/Login.html"><button>Login</button></a></div>
       </li>
     </div>
   </header>
@@ -206,7 +209,7 @@
   </footer>
 
   <script src="scripts/destinations.js"></script>
-  <script src="Ravi_LandingPage/Ravi_JS/index.js"></script>
+  <script src="./Ravi_LandingPage/Ravi_JS/index.js" type="module"></script>
 </body>
 
 </html>

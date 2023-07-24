@@ -2,48 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" href="./../Register/register.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="Login.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- <link rel="stylesheet" href="./../Register/register.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="Login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
- <body> 
-     <div id="Register-box"> 
-
-        <div id="registerh3">
-            <h4>Login with The Adventure Travels</h4>
-        </div>
-        <div class="login_register_btn">
-            <a href="Login.html" class="login"><button class="login">Sign-In</button></a>
-            
-            <a href="./../Register/register.html" class="register"><button class="register">Sign-Up</button></a>
-        </div>
-
-        
-            <div id="registerinput">
-                <h3>-OR-</h3>
-                <form action="">
-                    <input type="text" placeholder="Enter Username" id="username">
-                    <input type="password" placeholder="Enter Password" id="password">
-                    <!-- <input type="submit" value="PROCEED" id="process"> -->
-                    <button class="process">PROCEED</button>
-                </form>
-                <span class="registerspan">New User? <a href="./../Register/register.html" id="regilogin">Create
-                    Account</a> </span>
-            </div>
-               
-            
+<body>
+  <header>
+    <div class="scroll-tracker"></div>
+    <div class="navbar">
+      <div class="logo">
+        <a href="./index.html">
+          <div id="logo_img">
+            <img src="./../Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
+            <h2>Adventure Travels</h2>
+          </div>
+        </a>
+      </div>
+      <ul class="links">
+        <li><a href="./../Ravi_LandingPage/index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="./../Sign-In/Login.html" class="username">Login</a></li>
+        <li><a href="#" class="sign-out">Sign-Out</a></li>
+      </ul>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </div>
-    <script src="Login.js"></script>
-  
+    <div class="dropdown_menu">
+      <li><a href="./../Ravi_LandingPage/index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">
+          <div class="flex"><a href="./../Sign-In/Login.html"><button>Login</button></a></div>
+        </a></li>
+    </div>
+
+  </header>
+
+  <div id="Register-box">
+
+    <div id="registerh3">
+      <h4>Login with The Adventure Travels</h4>
+    </div>
+    <div class="login_register_btn">
+      <a href="Login.html" class="login"><button class="login">Sign-In</button></a>
+
+      <a href="./../Register/register.html" class="register"><button class="register">Sign-Up</button></a>
+    </div>
+
+
+    <div id="registerinput">
+      <h3>-OR-</h3>
+      <form action="">
+        <input type="text" placeholder="Enter Username" id="username">
+        <input type="password" placeholder="Enter Password" id="password">
+        <!-- <input type="submit" value="PROCEED" id="process"> -->
+        <button class="process">PROCEED</button>
+      </form>
+      <span class="registerspan">New User? <a href="./../Register/register.html" id="regilogin">Create
+          Account</a> </span>
+    </div>
+
+
+  </div>
+  <script src="Login.js" type="module"></script>
 </body>
 
 </html>
-
