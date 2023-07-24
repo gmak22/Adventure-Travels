@@ -1,3 +1,4 @@
+import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 
 let firstname_list = document.querySelector(".firstname_list");
 let email_list = document.querySelector(".email_list");
@@ -52,7 +53,7 @@ function check(size) {
 form.addEventListener("submit", (el) => {
     el.preventDefault();
     fetchURL()
-    
+
 })
 
 async function fetchURL() {
@@ -60,8 +61,8 @@ async function fetchURL() {
         let res = await fetch("https://adventure-travels-json-server.onrender.com/register");
         let data = await res.json();
         console.log(data);
-        let result=checkuser(data);
-        if (result==false) {
+        let result = checkuser(data);
+        if (result == false) {
             Swal.fire({
                 icon: 'info',
                 title: 'Oops...',
@@ -80,27 +81,15 @@ async function fetchURL() {
     }
 }
 
-function checkuser(data){
-    for(let i=0; i<data.length; i++){
-        if(data[i].username==firstname_list.value||data[i].email==email_list.value){
-           
-             return false;
-             
-            
+function checkuser(data) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].username == firstname_list.value || data[i].email == email_list.value) {
+
+            return false;
+
+
         }
     }
     return true;
 
 }
-let username1=JSON.parse(localStorage.getItem("username"))||""
-let loginuser=document.querySelector(".username")
-function signout(user){
-    if(user.length==0){
-        console.log(username1.length,"#");
-        loginuser.innerHTML="Login";
-       }else{
-           console.log(username1,"@");
-           loginuser.innerHTML=(user.toUpperCase());
-       }
-}
-signout(username1)

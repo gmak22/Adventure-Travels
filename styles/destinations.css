@@ -10,6 +10,15 @@ main {
     margin-top: 20px;
 }
 
+.scroll-tracker {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 0.5rem;
+    background-color: orange !important;
+    transform-origin: left;
+    z-index: 100;
+}
+
 /* Place Section */
 #placeSection {
     width: 60vw;
@@ -287,6 +296,8 @@ main {
     top: 10px;
 }
 
+#stateSection>h1 {}
+
 #stateContainer {
     height: 100vh;
     width: 100%;
@@ -354,7 +365,12 @@ main {
     background-color: transparent;
 }
 
-#stateSection h1,
+#stateSection h1 {
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+}
+
 #placeSection h1 {
     width: 100%;
     margin: 10px auto;

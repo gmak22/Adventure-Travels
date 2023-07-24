@@ -313,6 +313,30 @@ resetImg.addEventListener("click", () => {
 })
 
 const maxScreen = 768;
-if(window.innerWidth < maxScreen){
+if (window.innerWidth < maxScreen) {
   filterRange.style.display = "flex";
 }
+
+let username1 = JSON.parse(localStorage.getItem("username")) || "";
+
+let loginuser = document.querySelector(".login")
+let sign_out = document.querySelector(".sign-out");
+
+function signout(user) {
+  if (user.length == 0) {
+    console.log(username1.length, "#");
+    loginuser.innerHTML = "Login";
+    sign_out.innerHTML = "";
+    loginuser.addEventListener("click", () => { window.location.href = "./../../Sign-In/Login.html" });
+  } else {
+    console.log(username1, "@");
+    loginuser.innerHTML = (user.toUpperCase());
+  }
+}
+signout(username1)
+
+sign_out.addEventListener("click", () => {
+  let user = "";
+  localStorage.setItem("username", JSON.stringify(user));
+  signout(user)
+})

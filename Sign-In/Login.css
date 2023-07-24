@@ -162,12 +162,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    height: 100vh;
-    width: 99%;
-    margin: auto;
-}
-
 /* img {
     max-width: 100%;
     display: block;
@@ -191,120 +185,6 @@ header hr {
     border-width: 0;
     background-color: grey;
     margin-top: 3vh;
-}
-
-header li {
-    list-style: none;
-}
-
-header a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-}
-
-header a:hover {
-    color: orange;
-}
-
-.logo div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: maroon;
-}
-
-.logo img {
-    height: 10vh;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 60px;
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    margin-top: 4vh;
-    background-color: lightgray;
-}
-
-.navbar .links {
-    display: flex;
-    gap: 2rem;
-}
-
-.navbar .toggle_btn {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-}
-
-.navbar .links .flex {
-    display: flex;
-    gap: 1vh;
-}
-
-.navbar .links .flex img {
-    height: 3.5vh;
-}
-
-header {
-    /* position: relative; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /* width: 100%; */
-    /* border: 1px solid red; */
-}
-
-
-/* Dropdown CSS */
-
-.username,
-.sign-out {
-    background-color: lightgray;
-    cursor: pointer;
-    color: maroon;
-    font-weight: bolder;
-}
-
-.flex>a>button,
-.sign-out>a>button {
-    background-color: var(--headings);
-    color: #fff;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 5px;
-    padding: 0.3rem 0.3rem;
-    /* margin-bottom: 0.5rem; */
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-    width: 5rem;
-    position: relative;
-    bottom: 0.2rem;
-}
-
-.dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 10vh;
-    height: 0;
-    width: 300px;
-    background: rgba(50, 46, 46, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dropdown_menu.open {
-    height: 29vh;
-}
-
-.dropdown_menu.open img {
-    height: 3vh;
-}
 
 .dropdown_menu li {
     padding: 0.7rem;
