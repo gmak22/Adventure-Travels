@@ -1,234 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/a4ecbc7412.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-body {
-    /* height: 100vh; */
-    width: 95%;
-    margin: auto;
-    /* background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover; */
-    background-color: #ebebeb;
+    body {
+        /* height: 100vh; */
+        width: 95%;
+        margin: auto;
+        /* background: url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') no-repeat center center/cover; */
+        background-color: white;
         color: black;
-}
+    }
 
 
-:root {
-    --headings: #000000;
-    --background: #ebebeb;
-    --paragraph: #696969;
-    --highlight-light: #f6f6f6;
-    --highlight-dark: #f2f2f2;
-    --waves-color: #d58170;
-    --h1: 5.5rem;
-    --h2: 3.5rem;
-    --h3: 1.75rem;
-    --h4: 1.25rem;
-}
-
-@media screen and (max-width: 635px) {
     :root {
-        --h1: 3.25rem;
-        --h2: 2.75rem;
-        --h3: 1.25rem;
-        --h4: 1rem;
+        --headings: #000000;
+        --background: #ebebeb;
+        --paragraph: #696969;
+        --highlight-light: #f6f6f6;
+        --highlight-dark: #f2f2f2;
+        --waves-color: #d58170;
+        --h1: 5.5rem;
+        --h2: 3.5rem;
+        --h3: 1.75rem;
+        --h4: 1.25rem;
     }
 
-    html {
-        font-size: 12px;
+    @media screen and (max-width: 635px) {
+        :root {
+            --h1: 3.25rem;
+            --h2: 2.75rem;
+            --h3: 1.25rem;
+            --h4: 1rem;
+        }
+
+        html {
+            font-size: 12px;
+        }
     }
-}
 
-@media screen and (max-width: 1050px) {
-    :root {
-        --h1: 4rem;
-        --h2: 2.75rem;
-        --h3: 1.25rem;
-        --h4: 1rem;
+    @media screen and (max-width: 1050px) {
+        :root {
+            --h1: 4rem;
+            --h2: 2.75rem;
+            --h3: 1.25rem;
+            --h4: 1rem;
+        }
+
+        html {
+            font-size: 14px;
+        }
     }
 
-    html {
-        font-size: 14px;
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
     }
-}
 
+    body {
+        /* height: 100vh; */
+        width: 95%;
+        margin: auto;
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-body {
-    /* height: 100vh; */
-    width: 95%;
-    margin: auto;
-}
-
-/* img {
+    /* img {
     max-width: 100%;
     display: block;
 } */
 
-/* Scroll tracker CSS */
-.scroll-tracker {
-    position: fixed;
-    inset: 0 0 auto;
-    height: 0.5rem;
-    background-color: skyblue;
-    transform-origin: left;
-    z-index: 100;
-    
-}
+    /* Scroll tracker CSS */
+    .scroll-tracker {
+        position: fixed;
+        inset: 0 0 auto;
+        height: 0.5rem;
+        background-color: skyblue;
+        transform-origin: left;
+        z-index: 100;
+    }
 
-/* Header CSS */
+    /* Header CSS */
 
-header hr {
-    height: 1px;
-    border-width: 0;
-    background-color: grey;
-    margin-top: 3vh;
-}
+    header hr {
+        height: 1px;
+        border-width: 0;
+        background-color: grey;
+        margin-top: 3vh;
+    }
 
-header li {
-    list-style: none;
-}
+    header li {
+        list-style: none;
+    }
 
-header a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-}
+    header a {
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+    }
 
-header a:hover {
-    color: orange;
-}
+    header a:hover {
+        color: orange;
+    }
 
-.login {
-    background-color: lightgray;
-    cursor: pointer;
-    /* position: relative; */
-    /* bottom: 3px; */
-}
+    .login {
+        background-color: lightgray;
+        cursor: pointer;
+        /* position: relative; */
+        /* bottom: 3px; */
+    }
 
-.login>button {
-    background-color: var(--headings);
-    color: #fff;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 10px;
-    padding: 0.3rem 0.3rem;
-    /* margin-bottom: 0.5rem; */
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-    width: 5rem;
-    position: relative;
-    bottom: 0.2rem;
-}
+    .login>button {
+        background-color: var(--headings);
+        color: #fff;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 10px;
+        padding: 0.3rem 0.3rem;
+        /* margin-bottom: 0.5rem; */
+        transition: all 0.2s ease-out;
+        cursor: pointer;
+        width: 5rem;
+        position: relative;
+        bottom: 0.2rem;
+    }
 
-/* .logo {
+    /* .logo {
     height: 100%;
 } */
 
-.logo div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: maroon;
-}
+    .logo div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: maroon;
+    }
 
-.logo img {
-    height: 4rem;
-}
+    .logo img {
+        height: 4rem;
+    }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 60px;
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    margin-top: 4vh;
-}
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        margin-top: 4vh;
+        background-color: lightgray;
+    }
 
-.navbar .links {
-    display: flex;
-    gap: 2rem;
-}
+    .navbar .links {
+        display: flex;
+        gap: 2rem;
+    }
 
-.navbar .toggle_btn {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-}
+    .navbar .toggle_btn {
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
 
-.navbar .links .flex {
-    display: flex;
-    gap: 1vh;
-}
+    .navbar .links .flex {
+        display: flex;
+        gap: 1vh;
+    }
 
-.navbar .links .flex img {
-    height: 3.5vh;
-}
+    .navbar .links .flex img {
+        height: 3.5vh;
+    }
 
-header {
-    position: relative;
-}
+    header {
+        position: relative;
+        padding: 0 2rem;
+        background-color: lightgray;
+    }
 
 
-/* Dropdown CSS */
-.dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 8vh;
-    height: 0;
-    width: 300px;
-    background: rgba(50, 46, 46, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 10;
-}
+    /* Dropdown CSS */
+    .dropdown_menu {
+        display: none;
+        position: absolute;
+        right: 2rem;
+        top: 8vh;
+        height: 0;
+        width: 300px;
+        background: rgba(50, 46, 46, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 10;
+    }
 
-.dropdown_menu.open {
-    height: 29vh;
-}
+    .dropdown_menu.open {
+        height: 29vh;
+    }
 
-/* .dropdown_menu.open img {
+    /* .dropdown_menu.open img {
     height: 3vh;
 } */
 
-.dropdown_menu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .dropdown_menu li {
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.dropdown_menu li:hover {
-    color: orange;
-}
-
-
+    .dropdown_menu li:hover {
+        color: orange;
+    }
 
 
-   
-    #main{
+
+
+
+    #main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin-top: 10px;
@@ -237,29 +240,32 @@ header {
         justify-content: center;
         width: 100%;
         margin-bottom: 50px;
-       
-       
+
+
 
     }
-    .main1{
-       /* border: 2px solid black; */
-       font-size: 15px;
-       padding: 30px;
-       width: 90%;
-       color: black ;
-       border-radius: 20px;
-       background-color: rgba(229, 142, 142, 0.5);
-       color: #0a0909;
-       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    .main1 {
+        /* border: 2px solid black; */
+        font-size: 15px;
+        padding: 30px;
+        width: 90%;
+        color: black;
+        border-radius: 20px;
+        background-color: rgba(229, 142, 142, 0.5);
+        color: #0a0909;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
-       .main1 h2{
+
+    .main1 h2 {
         text-align: center;
-       }
-       .main1 h2{
+    }
+
+    .main1 h2 {
         text-align: center;
-       }
-    
-    .main1 input{
+    }
+
+    .main1 input {
         margin: 10px;
         width: 100%;
         height: 30px;
@@ -270,16 +276,18 @@ header {
         text-align: center;
 
     }
-    .main1 ::placeholder{
+
+    .main1 ::placeholder {
         text-align: center;
     }
-    #main2 #Summary input{
+
+    #main2 #Summary input {
         text-align: center;
 
     }
-    
 
-    .main1 button{
+
+    .main1 button {
         margin: 10px;
         width: 100%;
         height: 30px;
@@ -289,10 +297,12 @@ header {
         margin-top: 15px;
         color: black;
     }
-    .main1 button:hover{
+
+    .main1 button:hover {
         color: black;
         background-color: aqua;
     }
+
     .main1 .input-group {
         display: flex;
         align-items: center;
@@ -300,7 +310,7 @@ header {
     }
 
     .main1 .input-group label {
-        
+
         color: black;
     }
 
@@ -309,23 +319,25 @@ header {
         height: 30px;
         border-radius: 10px;
     }
-    .main1 input{
-    background-color: lightgrey;
-    font-size: 15px;
-    border-radius: 10px;
-    border: 1px solid black;
-    margin-top: 10px;
-}
 
-
-
-    .sub{
-        display: flex;
-        
+    .main1 input {
+        background-color: lightgrey;
+        font-size: 15px;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin-top: 10px;
     }
-    #main2 #Summary{
+
+
+
+    .sub {
+        display: flex;
+
+    }
+
+    #main2 #Summary {
         /* border: 2px solid black; */
-        width: 90%;     
+        width: 90%;
         font-size: 15px;
         /* margin-right: 100px; */
         margin-top: 20px;
@@ -334,323 +346,345 @@ header {
         padding: 20px;
         border-radius: 20px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-#main2 #Summary span{
-    font-size: 15px;
-   
-}
-#main2 #Summary input{
-    background-color: lightgrey;
-    font-size: 15px;
-    width: 50%;
-    border-radius: 10px;
-    border: 1px solid black;
-    height: 30px;
-    margin-top: 10px;
-}
-#main2 #Summary button{
-    background-color: rgb(113, 142, 210);
-    font-size: 15px;
-    width: 50%;
-    margin-left: 46%;
-    border-radius: 10px;
-    border: 1px solid black;
-    height: 30px;
-    margin-top: 10px;
-}
+    }
 
-#Summary h3{
-    text-align: center;
-    margin-bottom: 15px;
-}
-.location{
-    margin-right: 28%;
-}
-.price{
-    margin-right: 14%;
-}
-.guest{
-    margin-right: 25%;
-}
-.gst{
-    margin-right: 32%;
-}
-.total{
-    margin-right: 26%;
-}
-.coupon{
-    margin-right: 24%;
-}
-.final{
-    margin-right: 15%;
-}
+    #main2 #Summary span {
+        font-size: 15px;
+
+    }
+
+    #main2 #Summary input {
+        background-color: lightgrey;
+        font-size: 15px;
+        width: 50%;
+        border-radius: 10px;
+        border: 1px solid black;
+        height: 30px;
+        margin-top: 10px;
+    }
+
+    #main2 #Summary button {
+        background-color: rgb(113, 142, 210);
+        font-size: 15px;
+        width: 50%;
+        margin-left: 40%;
+        border-radius: 10px;
+        border: 1px solid black;
+        height: 30px;
+        margin-top: 10px;
+    }
+
+    #Summary h3 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .location {
+        margin-right: 25%;
+    }
+
+    .price {
+        margin-right: 14%;
+    }
+
+    .guest {
+        margin-right: 22.5%;
+    }
+
+    .gst {
+        margin-right: 28.2%;
+    }
+
+    .total {
+        margin-right: 23.5%;
+    }
+
+    .coupon {
+        margin-right: 22%;
+    }
+
+    .final {
+        margin-right: 15%;
+    }
 
 
 
-#main2 #offer{
+    #main2 #offer {
         /* border: 2px solid black; */
-        width: 90%;     
+        width: 90%;
         margin-right: 100px;
         color: black;
         background-color: rgba(208, 219, 50, 0.5);
         padding: 20px;
         border-radius: 20px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-#offer p{
-    margin-top:20px;
-    font-size: 15px;
-}
-
-#offer div{
-    text-align: center;
-    font-size: 20px;
-}
-
-/* Responsive Design CSS */
-@media (max-width: 1000px) {
-    .navbar .links {
-        display: none;
     }
 
-    .navbar .toggle_btn {
-        display: block;
+    #offer p {
+        margin-top: 20px;
+        font-size: 15px;
     }
 
-    .dropdown_menu {
-        display: block;
+    #offer div {
+        text-align: center;
+        font-size: 20px;
     }
 
-    .dropdown_menu .flex {
+    .login,
+    .sign-out {
+        background-color: lightgray;
+        cursor: pointer;
+        color: maroon;
+        font-weight: bolder;
+        /* position: relative; */
+        /* bottom: 3px; */
+    }
+
+    /* Responsive Design CSS */
+    @media (max-width: 1000px) {
+        .navbar .links {
+            display: none;
+        }
+
+        .navbar .toggle_btn {
+            display: block;
+        }
+
+        .dropdown_menu {
+            display: block;
+        }
+
+        .dropdown_menu .flex {
+            display: flex;
+            gap: 1vh;
+        }
+
+        #main {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .dropdown_menu {
+            left: 2rem;
+            width: unset;
+        }
+
+        #main {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 1050px) {
+        body footer {
+            padding: 2rem 1rem 0 1rem;
+        }
+    }
+
+    footer {
+        padding: 1.5rem 0 0 0;
+        background-color: var(--background);
+    }
+
+    @media screen and (max-width: 1050px) {
+        body footer .container {
+            padding: 0 1rem;
+            width: 100%;
+        }
+    }
+
+    footer .container {
+        /* width: min(100%, 65rem); */
+        width: 90%;
+        margin: auto;
+    }
+
+    footer .container>div:first-of-type {
         display: flex;
-        gap: 1vh;
+        align-items: center;
+        justify-content: space-between;
     }
-    #main{
-        grid-template-columns: repeat(2, 1fr);
-}
-}
-
-@media (max-width: 576px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
-    }
-    #main{
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media screen and (max-width: 1050px) {
-    body footer {
-        padding: 2rem 1rem 0 1rem;
-    }
-}
-
-footer {
-    padding: 1.5rem 0 0 0;
-    background-color: var(--background);
-}
-
-@media screen and (max-width: 1050px) {
-    body footer .container {
-        padding: 0 1rem;
-        width: 100%;
-    }
-}
-
-footer .container {
-    /* width: min(100%, 65rem); */
-    width: 90%;
-    margin: auto;
-}
-
-footer .container>div:first-of-type {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-footer .container .socials,
-footer .container .newsletter {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-footer .container .socials {
-    border-right: 1px solid var(--paragraph);
-    padding-right: 2rem;
-}
-
-@media screen and (max-width: 635px) {
 
     footer .container .socials,
     footer .container .newsletter {
-        flex-direction: column;
+        width: 50%;
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .container .socials {
+        border-right: 1px solid var(--paragraph);
+        padding-right: 2rem;
+    }
+
+    @media screen and (max-width: 635px) {
+
+        footer .container .socials,
+        footer .container .newsletter {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    }
+
+    footer h3 {
+        font-size: var(--h3);
         margin-bottom: 1rem;
-        text-align: center;
+        color: var(--headings);
     }
-}
 
-footer h3 {
-    font-size: var(--h3);
-    margin-bottom: 1rem;
-    color: var(--headings);
-}
+    footer .container h3 {
+        font-size: var(--h3);
+        line-height: 1.2;
+        padding-bottom: 0;
+        max-width: 50%;
+    }
 
-footer .container h3 {
-    font-size: var(--h3);
-    line-height: 1.2;
-    padding-bottom: 0;
-    max-width: 50%;
-}
+    footer .container .socials div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-footer .container .socials div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    footer .container .socials div>a {
+        background-color: white;
+        padding: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        margin: 0 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: color 0.2s ease-out;
+        cursor: pointer;
+    }
 
-footer .container .socials div>a {
-    background-color: white;
-    padding: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    margin: 0 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: color 0.2s ease-out;
-    cursor: pointer;
-}
+    footer .container .newsletter {
+        padding-left: 2rem;
+        position: relative;
+    }
 
-footer .container .newsletter {
-    padding-left: 2rem;
-    position: relative;
-}
+    @media screen and (max-width: 1050px) {
+        footer .container .newsletter input {
+            padding: 0.75rem;
+        }
+    }
 
-@media screen and (max-width: 1050px) {
     footer .container .newsletter input {
-        padding: 0.75rem;
+        padding: 1rem;
+        border-radius: 50px;
+        border: none;
     }
-}
 
-footer .container .newsletter input {
-    padding: 1rem;
-    border-radius: 50px;
-    border: none;
-}
+    @media screen and (max-width: 1050px) {
+        footer .container .newsletter img {
+            height: 1.5rem;
+        }
+    }
 
-@media screen and (max-width: 1050px) {
+    @media screen and (max-width: 635px) {
+        body footer .container .newsletter img {
+            height: 2.5rem;
+            position: absolute;
+            left: 90%;
+            right: 0;
+            bottom: 4%;
+        }
+    }
+
     footer .container .newsletter img {
-        height: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 635px) {
-    body footer .container .newsletter img {
         height: 2.5rem;
         position: absolute;
-        left: 90%;
         right: 0;
-        bottom: 4%;
     }
-}
 
-footer .container .newsletter img {
-    height: 2.5rem;
-    position: absolute;
-    right: 0;
-}
-
-footer hr {
-    background-color: var(--paragraph);
-    margin-bottom: 2rem;
-}
-
-@media screen and (max-width: 1050px) {
-    body footer .container>div:nth-of-type(2) {
-        gap: 1rem;
+    footer hr {
+        background-color: var(--paragraph);
+        margin-bottom: 2rem;
     }
-}
 
-@media screen and (max-width: 500px) {
-    body footer .container>div:nth-of-type(2) {
-        gap: 1rem;
-        grid-template-columns: 2fr 1fr;
+    @media screen and (max-width: 1050px) {
+        body footer .container>div:nth-of-type(2) {
+            gap: 1rem;
+        }
     }
-}
 
-footer .container>div:nth-of-type(2) {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
+    @media screen and (max-width: 500px) {
+        body footer .container>div:nth-of-type(2) {
+            gap: 1rem;
+            grid-template-columns: 2fr 1fr;
+        }
+    }
 
-footer .container>div:nth-of-type(2)>div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-}
+    footer .container>div:nth-of-type(2) {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 1rem;
+    }
 
-footer .container>div:nth-of-type(2) img {
-    align-self: flex-start;
-    height: 5rem;
-    width: 5rem;
-}
+    footer .container>div:nth-of-type(2)>div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
 
-footer p {
-    color: var(--paragraph);
-    font-size: 0.85rem;
-    line-height: 1.5;
-}
+    footer .container>div:nth-of-type(2) img {
+        align-self: flex-start;
+        height: 5rem;
+        width: 5rem;
+    }
 
-footer h4 {
-    font-size: var(--h4);
-    margin-bottom: 1rem;
-}
+    footer p {
+        color: var(--paragraph);
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
 
-footer .container>div:nth-of-type(2) a {
-    text-decoration: none;
-    font-size: 0.85rem;
-    color: var(--paragraph);
-    margin-bottom: 0.5rem;
-}
+    footer h4 {
+        font-size: var(--h4);
+        margin-bottom: 1rem;
+    }
 
-footer .container>div:nth-of-type(3),
-footer .container>div:nth-of-type(3)>div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    footer .container>div:nth-of-type(2) a {
+        text-decoration: none;
+        font-size: 0.85rem;
+        color: var(--paragraph);
+        margin-bottom: 0.5rem;
+    }
 
-footer .container>div:nth-of-type(3)>div {
-    width: 40%;
-}
+    footer .container>div:nth-of-type(3),
+    footer .container>div:nth-of-type(3)>div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-footer .container>div:nth-of-type(3)>div img {
-    width: 3rem;
-    max-height: 1rem;
-    justify-self: flex-end;
-}
+    footer .container>div:nth-of-type(3)>div {
+        width: 40%;
+    }
 
+    footer .container>div:nth-of-type(3)>div img {
+        width: 3rem;
+        max-height: 1rem;
+        justify-self: flex-end;
+    }
 </style>
+
 <body>
-   
+
     <header>
         <div class="scroll-tracker"></div>
         <div class="navbar">
             <div class="logo">
                 <a href="./index.html">
                     <div>
-                        <img src="./Ravi_images/logo.PNG" alt="website logo">
+                        <img src="./Ravi_LandingPage/Ravi_images/logo.PNG" alt="website logo">
                         <h2>Adventure Travels</h2>
                     </div>
                 </a>
@@ -658,10 +692,13 @@ footer .container>div:nth-of-type(3)>div img {
             <ul class="links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Destinations</a></li>
+                <li><a href="./../destinations.html">Destinations</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li>
-                    <div class="login"><button>Login</button></div>
+                    <div class="login">Login</div>
+                </li>
+                <li>
+                    <div class="sign-out">Sign-out</div>
                 </li>
             </ul>
             <div class="toggle_btn">
@@ -674,74 +711,74 @@ footer .container>div:nth-of-type(3)>div img {
             <li><a href="#">Destinations</a></li>
             <li><a href="#">Reviews</a></li>
             <li>
-                <div class="login"><button>Login</button></div>
+                <div class="login"><a href="./../Sign-In/Login.html"><button>Login</button></a></div>
             </li>
         </div>
     </header>
 
-   
+
 
 
     <div id="main">
 
-    <div class="main1">
-        <h2> Booking Details </h2>
-    <span>Full Name:</span> <input type="text" placeholder="Enter Full Name Here"> <br>
-    <span>Email Id:</span> <input type="email" placeholder="Enter Email Id Here"> <br>
-    <span>Contact No.:</span> <input type="number" max="10" placeholder="Enter contact No. Here"> <br>
-   <div class="sub">
-    <div class="input-group">
-        <label for="age">Age:</label> <br>
-        <input type="number" id="age" placeholder="Enter Age Here">
+        <div class="main1">
+            <h2> Booking Details </h2>
+            <span>Full Name:</span> <input type="text" placeholder="Enter Full Name Here"> <br>
+            <span>Email Id:</span> <input type="email" placeholder="Enter Email Id Here"> <br>
+            <span>Contact No.:</span> <input type="number" max="10" placeholder="Enter contact No. Here"> <br>
+            <div class="sub">
+                <div class="input-group">
+                    <label for="age">Age:</label> <br>
+                    <input type="number" id="age" placeholder="Enter Age Here">
+                </div>
+                <div class="input-group">
+                    <label for="source-city">City:</label> <br>
+                    <input type="text" id="source-city" placeholder="Enter City Name">
+                </div>
+            </div>
+            <button id="checkout">Proceed to Checkout</button>
+        </div>
+
+
+
+
+        <div id="main2">
+            <div id="offer">
+                <div>
+                    <h1>20% OFF</h1>
+                    <h4>Use Promo Code</h4>
+                    <h3>"Adventure20"</h3>
+                </div>
+                <p>Terms & Conditions* : PromoCode is applicable only for the Prices above 50000....</p>
+
+
+            </div>
+
+
+
+            <div id="Summary">
+                <h3>Summary of Your Plan </h3>
+                <span class="location">Destination : </span> <input id="location" type="text"><br>
+                <span class="price">Price Per Person(Rs) : </span> <input id="plan" type="text"><br>
+                <span class="guest">No. of Person : </span> <input id="guest" type="text"><br>
+
+                <button class="calBtn">Calculate</button> <br>
+                <span class="gst">GST 5% : </span>
+                <input type="text" id="gst"> <br>
+                <span class="total">Total Amount : </span>
+                <input type="text" id="totalAmount"> <br> <br>
+
+                <span class="coupon">Coupon Code : </span>
+                <input type="text" id="coupon" /> <br>
+                <button class="cupBtn">Apply Coupon</button> <br>
+
+                <span class="final">Total Amount Payble: </span>
+                <input type="text" id="finalAmount">
+
+            </div>
+        </div>
     </div>
-    <div class="input-group">
-        <label for="source-city">City:</label> <br>
-        <input type="text" id="source-city" placeholder="Enter City Name">
-    </div>
-   </div>   
-    <button id="checkout">Proceed to Checkout</button>
-    </div>
 
-
-
-
-    <div id="main2">
-        <div id="offer">
-           <div>
-            <h1>20% OFF</h1>
-            <h4>Use Promo Code</h4>
-            <h3>"Adventure20"</h3>
-           </div>    
-            <p>Terms & Conditions* : PromoCode is applicable only for the Prices above 50000....</p>
-        
-        
-       </div>
-       
-
-       
-        <div id="Summary">
-            <h3>Summary of Your Plan </h3>
-            <span class="location">Destination : </span> <input id="location" type="text"><br>
-            <span class="price">Price Per Person(Rs) : </span> <input id="plan" type="text"><br>
-            <span class="guest">No. of Person : </span> <input id="guest" type="text"><br>
-
-            <button onclick="calculateTotalAmount()">Calculate</button> <br>
-             <span class="gst">GST 5% : </span>
-             <input type="text" id="gst"> <br>
-            <span class="total">Total Amount : </span> 
-            <input type="text" id="totalAmount"> <br> <br>
-
-            <span class="coupon">Coupon Code : </span>
-            <input type="text" id="coupon" />   <br>
-            <button onclick="applyCoupon()">Apply Coupon</button> <br>  
-
-            <span class="final">Total Amount  Payble: </span> 
-            <input type="text" id="finalAmount">
-
-        </div>      
-    </div>
-    </div>
-    
 
     <footer>
         <div class="container">
@@ -767,14 +804,14 @@ footer .container>div:nth-of-type(3)>div img {
                 <div class="newsletter">
                     <h3>Join Our Newsletter</h3>
                     <input type="email" placeholder="Enter your e-mail">
-                    <img src="./Ravi_images/cta-btn.png" alt="Submit Icon" onclick="showPopup()">
+                    <img src="./Ravi_LandingPage/Ravi_images/cta-btn.png" alt="Submit Icon" onclick="showPopup()">
                     <div id="popup" class="popup"></div>
                 </div>
             </div>
             <hr>
             <div>
                 <div>
-                    <img src="./Ravi_images/logo.PNG" alt="Travelo Logo">
+                    <img src="./Ravi_LandingPage/Ravi_images/logo.PNG" alt="Travelo Logo">
                     <p>
                         Travell plans are not really an instrument themselves but a
                         delivery mechanism or strategy for mostly others
@@ -804,9 +841,9 @@ footer .container>div:nth-of-type(3)>div img {
                 <p>@2023 AdventureTravels | All Rights Reserved</p>
                 <div>
                     <p>We Accept Payment:</p>
-                    <img src="./Ravi_images/logos_stripe.svg" alt="Stripe Logo">
-                    <img src="./Ravi_images/Paypal.svg" alt="Paypal Logo">
-                    <img src="./Ravi_images/Payonner 1.svg" alt="Payoneer Logo">
+                    <img src="./Ravi_LandingPage/Ravi_images/logos_stripe.svg" alt="Stripe Logo">
+                    <img src="./Ravi_LandingPage/Ravi_images/Paypal.svg" alt="Paypal Logo">
+                    <img src="./Ravi_LandingPage/Ravi_images/Payonner 1.svg" alt="Payoneer Logo">
                 </div>
             </div>
         </div>
@@ -814,146 +851,6 @@ footer .container>div:nth-of-type(3)>div img {
 
 </body>
 
-<script>
+<script src="./payment.js" type="module"></script>
 
-let LS= localStorage.getItem("bookingData");
-
-let destination= document.querySelector("#location");
-let price= document.querySelector("#plan")
-
-if(LS==null){
-    LS=[];
-}
-else{
-    LS= JSON.parse(LS)
-}
-
-Display(LS)
-
-      function Display(arr){
-        LS.innerHTML= ""
-
-        arr.map((e)=>{
-
-        destination.value = e.name;
-        price.value = e.price;
-        })
-        
-      }
-     
-
-
-
-
- function calculateTotalAmount() {
-  
-  const pricePerPerson = Number(document.getElementById('plan').value);
-  const numberOfPersons = Number(document.getElementById('guest').value);
-
- 
-  // Calculate total amount (price per person * no. of persons) + 5% GST
-  const gstPercentage = 5;
-  const gstAmount = (pricePerPerson * numberOfPersons * gstPercentage) / 100;
-
-
-  const totalAmount = pricePerPerson * numberOfPersons + gstAmount;
-
-  // Display the total amount
-  document.getElementById('gst').value = Math.floor(gstAmount);
-  document.getElementById('totalAmount').value = Math.floor(totalAmount);
-
-//   localStorage.setItem('totalAmountPayable', totalAmount.toFixed());
-   localStorage.setItem('numberOfPersons', numberOfPersons);
-  
- }
-
-
-
-
- function applyCoupon() {
-  const couponCodeInput = document.getElementById('coupon');
-  const couponCode = couponCodeInput.value;
-  const totalAmountInput = document.getElementById('totalAmount');
-  const finalAmountInput = document.getElementById('finalAmount');
-
-  const totalAmount = Number(totalAmountInput.value);
-
-
-  if (totalAmount > 50000 && couponCode === 'Adventure20') {
-   
-    const discountPercentage = 20;
-    const discountAmount = (totalAmount * discountPercentage) / 100;
-    const finalAmount = totalAmount - discountAmount;
-
-    finalAmountInput.value = Math.floor(finalAmount); 
-
-
-    let finalAmountsArray = JSON.parse(localStorage.getItem('finalAmounts')) || [];
-    finalAmountsArray.push(finalAmount);
-
-    localStorage.setItem('finalAmounts', JSON.stringify(finalAmountsArray));
-    
-
-    displayFinalAmounts(finalAmountsArray);
-
-    alert('Coupon applied successfully!');
-
-
-  } 
-  
-  else if(totalAmount < 50000){ 
-    alert('coupon not applicable.');
-
-    finalAmountInput.value = Math.floor(totalAmount);
-
-    let finalAmountsArray = JSON.parse(localStorage.getItem('finalAmounts')) || [];
-    finalAmountsArray.push(totalAmount);
-
-    localStorage.setItem('finalAmounts', JSON.stringify(finalAmountsArray));
-    
-
-    displayFinalAmounts(finalAmountsArray);
-
-  }
-  
-  else {    
-    alert('Invalid coupon code');
-    finalAmountInput.value = Math.floor(totalAmount);
-    
-  }
-  
-
-}
-
-
-
-function validateInputs() {
-  const inputs = document.querySelectorAll("input");
-  let isValid = true;
-
-  inputs.forEach(input => {
-    if (input.value === "") {
-      isValid = false;
-    }
-  });
-
-  if (!isValid) {
-    alert("Please fill in all the input fields before proceeding.");
-  }
-
-  return isValid;
-}
-
-const checkoutButton = document.getElementById("checkout");
-checkoutButton.addEventListener("click", () => {
-  if (validateInputs()) {
-    window.location.href = "checkoutPage.html"
-
-   
-  }
-});
-
-
-
-</script>
 </html>
