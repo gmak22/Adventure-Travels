@@ -19,13 +19,14 @@
                     <h2>Adventure<br><span class="danger">Travels</span>
                         </span></h2>
                 </div>
+                
+            </div>
+            <div class="sidebar">
                 <div class="close" id="close-btn">
                     <span class="material-icons-sharp">
                         close
                     </span>
                 </div>
-            </div>
-            <div class="sidebar">
                 <a href="#">
                     <span class="material-icons-sharp">
                         dashboard
@@ -39,10 +40,6 @@
                         <h3>Destinations</h3>
                 </a>
                 <a href="#" id="allusersdata">
-                    <!-- <span class="material-icons-sharp">
-                        receipt_long
-                        </span>
-                    <h3>History</h3> -->
                     <span class="material-icons-sharp">
                        person_outline
                     </span> 
@@ -85,12 +82,6 @@
                         </span>
                     <h3>New Login</h3>
                 </a>
-                <!-- <a href="#">
-                    <span class="material-icons-sharp">
-                        logout
-                        </span>
-                    <h3>Logout</h3>
-                </a> -->
             </div>
         </aside>
         <!-- End of Sidebar Section -->
@@ -98,6 +89,11 @@
 
         <!-- Main section -->
         <main>
+            <div  id="sevenpx">
+                <span class="material-icons-sharp">
+                    menu
+                </span>
+            </div>
             <h1>Analytics</h1>
             <div class="analyse">
                 <div class="sales">
@@ -173,25 +169,6 @@
         </table>
         <a href="#">Show All</a></div>
     
-     <div id="destinationdatadiv">
-        <h2>All Destinations Data</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Destination</th>
-                    <th>Capital</th>
-                    <th>Image</th>
-                    <th>Edit data</th>
-                    <th>Delete data</th>
-                </tr>
-            </thead>
-            <tbody id="destbody">
-             
-            </tbody>
-        </table>
-        <a href="#">Show All</a>
-     </div>
  
 </div>
 <!-- End of Order section -->
@@ -200,24 +177,17 @@
 
         <!-- right Section -->
         <div class="right-section">
-            <!-- <div class="nav">
-                <button id="menu-btn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
-                </button>
-            </div> -->
             <div id="newdatadiv">
                 <p class="form-head">Add New Data<p>
                 <form action="" id="newdata">
                     <label for="">Name</label><br>
-                    <input type="text" id="newdataname"><br>
+                    <input type="text" id="newdataname" placeholder="User Name"><br>
                     <label for="">Email</label><br>
-                    <input type="text" id="newdataemail"><br>
+                    <input type="text" id="newdataemail" placeholder="Email"><br>
                     <label for="">Password</label><br>
-                    <input type="text"id="newdatapass"><br>
+                    <input type="text"id="newdatapass" placeholder="Password"><br>
                     <label for="">Gender</label><br>
-                    <input type="text" id="newdatagender"><br>
+                    <input type="text" id="newdatagender" placeholder="Gender"><br>
                     <button id="newdatabtn" class="rightformbtn">Add NewUser</button>
                 </form>
             </div>
@@ -225,15 +195,15 @@
                 <p class="form-head">Edit Data</p>
                 <form action="" id="newdata">
                      <label for="">Id</label><br>
-                    <input type="text" id="editid"><br>
+                    <input type="text" id="editid" placeholder="Id"><br>
                     <label for="">Name</label><br>
-                    <input type="text" id="editname"><br>
+                    <input type="text" id="editname" placeholder="Edit Name"><br>
                     <label for="">Email</label><br>
-                    <input type="text" id="editemail"><br>
+                    <input type="text" id="editemail" placeholder="EditEmail"><br>
                     <label for="">Password</label><br>
-                    <input type="text" id="editpass"><br>
+                    <input type="text" id="editpass" placeholder="EditPass"><br>
                     <label for="">Gender</label><br>
-                    <input type="text" id="editgender"><br>
+                    <input type="text" id="editgender" placeholder="Edit Gender"><br>
                     <button id="editdatabtn" class="rightformbtn">Edit User</button>
                 </form>
             </div>
@@ -255,23 +225,5 @@
 
 
 
-
-<!-- <table>
-        <thead>
-        <tr><th>Name</th>
-        <th>Email</th>
-    <th>Phone</th>
-    <th>Address</th>
-    <th>Gender</th>
-    <th>Age</th>
-    <th>Aadhar No</th>
-    <th>Trips</th>
-    <th>Delete</th>
-</tr>
-</thead>
-<tbody>
-
-</tbody>
-    </table> -->
 
 <script src="./saritajs/adminuser.js"></script>

@@ -133,6 +133,9 @@ aside .toggle .close{
     padding-right: 1rem;
     display:none;
 }
+#close-btn{
+    display: none;
+}
 aside .sidebar{
     display:flex;
     flex-direction: column;
@@ -165,11 +168,6 @@ aside .sidebar a span{
 aside .sidebar a:first-child{
     margin-top: 1rem;
 }
-/* aside .sidebar a:last-child{
-    position: absolute;
-    bottom:2rem;
-    width:100%;
-} */
 aside .sidebar a:hover{
     width: 100%;
     color: var(--color-primary);
@@ -388,12 +386,156 @@ form label{
     border:5px solid #FF0060;
     color: #F7D060;
 }
-
-
-
-
-
-
-#destinationdatadiv{
-    display: none;
+input{
+    padding-left: 5%;
 }
+
+/* #destinationdatadiv{
+    display: none;
+} */
+
+
+
+
+#sevenpx{
+    display: none;
+    }
+    input::placeholder{
+        display: none;
+    }
+    
+    
+    
+    
+    @media only screen and (max-width: 1200px) {
+    .container{
+        width: 95%;
+        grid-template-columns: 7rem auto 23rem;
+    } 
+    aside .logo h2{
+        display:none;
+    }
+    aside .sidebar h3{
+       display: none; 
+    }
+    aside .sidebar a{
+     width:5.6rem;  
+    }
+    main .analyse{
+       grid-template-columns: 1fr;
+       gap: 0; 
+    }
+    main .new-users .user-list .user{
+      flex-basis: 40%;  
+    }
+    main .recent-orders{
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 0.8rem;
+    }
+    main .recent-orders table{
+        width: 70vw;
+    }
+    }
+    @media only screen and (max-width:750px){
+        .container{
+            width: 100%;
+            grid-template-columns: 1fr;
+            padding: 0 var(--padding-1);
+        }
+        aside{
+            position: fixed;
+            background-color: var(--color-white);
+            width: 15rem;
+            z-index: 3;
+            box-shadow: 1rem 3rem 4rem var(--color-light);
+            height: 100vh;
+            left: -100%;
+            display:none;
+            animation: showMenu 0.4s ease forwards;
+        }
+    
+        @keyframes showMenu{
+            to{
+                left: 0;
+            }
+        }
+      aside{
+        margin-top: 10%;
+        height: auto;
+      }
+        aside .logo{
+            margin-left: 1rem;
+        }
+        aside .logo h2{
+            display: inline;
+        }
+        aside .sidebar h3{
+            display: inline;
+        }
+        aside .sidebar a{
+            width: 100%;
+            height: 3.4rem;
+        }
+        aside .toggle .close{
+       display: inline-block;
+        cursor: pointer;
+        }
+        main{
+            margin-top: 8rem;
+            padding: 0 1rem;
+        }
+        main .new-users .users-list .user{
+            flex-basis: 35%;
+        }
+        main .recent-orders{
+            width: 94%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 2rem 0 0 0.8rem;
+        }
+        main .recent-orders table{
+            width: 80vw;
+        }
+        .right-section{
+           width: 94%; 
+           margin: 0 auto 4rem;
+        }
+        form{
+            border-left: none;
+            width: 100%;
+            margin-left: 30%;
+        }
+        input{
+            width: 80%;
+        }
+        form label{
+           display: none;
+        }
+    .recent-orders{
+        width: 100%;
+        display: block;
+    }
+       #destinationdatadiv{
+        width: 100%;
+       }
+       #sevenpx{
+        display: block;
+        width: 20px;
+        height: 20px;
+        }
+        input::placeholder{
+            display: block;
+        }
+    
+        #close-btn{
+            display: block;
+            margin-left: 80%;
+        }
+        #sidebar{
+            padding-top: 10%;
+        }
+    }

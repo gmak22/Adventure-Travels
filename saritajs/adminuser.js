@@ -23,6 +23,11 @@ function fetcheddata(url){
 
         totalMale.innerHTML=d;
         totalfemale.innerHTML=k-d;
+        let g=d/k*100;
+malepercent.innerHTML=`+${Math.round(g)}%`;
+femalepercent.innerHTML=`+${100-g}%`;
+        totalMale.innerHTML=d;
+        totalfemale.innerHTML=k-d;
     }).catch(function(error){
         console.log(error);
     })
@@ -227,73 +232,16 @@ let destinationdata=`https://correct-api-destination.onrender.com/destination`;
 
 let getalldestinationdata=document.getElementById("alldestinationdata");
 getalldestinationdata.addEventListener("click",function(){
-    document.getElementById("alluserdatadiv").style.display="none";
-    document.getElementById("destinationdatadiv").style.display="block";
-    fetchdestination(destinationdata);
+    window.location.href="./adminproduct.html";
 })
 
-function fetchdestination(url){
-    let destdata=fetch(url,{
-       method:'GET', 
-    }).then(function(res){
-        return res.json();
-    }).then(function(list){
-        console.log(list);
-        displaydest(list);
-    //    let k=list.length;
-    //     let d=0;
-    //     totaluser.innerHTML=k;
-    //     for(let i=0;i<list.length;i++){
-    //         if(list[i].gender=="male"){
-    //      d++;
-    //         }
-    //     }
+    let sideMenu=document.querySelector("aside");
+let menubar=document.getElementById("sevenpx");
+let closebtn=document.getElementById("close-btn");
+menubar.addEventListener("click",function(){
+  sideMenu.style.display='block';
+});
 
-        // totalMale.innerHTML=d;
-        // totalfemale.innerHTML=k-d;
-    }).catch(function(error){
-        console.log(error);
-    })
-    return destdata;
-}
-let desttbody=document.getElementById("destbody");
-function displaydest(data){
-    desttbody.innerHTML="";
-    for(let i=0;i<data.length;i++){
-        desttbody.append(destrow(data[i]));
-    }
-    }
-    
-    function destrow(ele){
-        let drow=document.createElement("tr");
-    let destid=document.createElement("td");
-    let destlocation=document.createElement("td");
-    let destcapital=document.createElement("td");
-    let destimg=document.createElement("td");
-    let destedit=document.createElement("td");
-    let destbutton=document.createElement("td");
-    let desteditb=document.createElement("button");
-    desteditb.setAttribute("class","tdbutton");
-    desteditb.setAttribute("id","td-destedit-button");
-    let destdeleteb=document.createElement("button");
-    destdeleteb.setAttribute("class","tdbutton");
-    destdeleteb.setAttribute("id","td-destdelete-button");
-    
-    destid.innerHTML=ele.id;
-    destlocation.innerHTML=ele.location;
-    destcapital.innerHTML=ele.capital;
-    destimg.innerHTML=ele.image;
-    desteditb.innerHTML="Edit";
-    destdeleteb.innerHTML="Delete";
-    
-    // destedit.addEventListener("click",function(){
-    //     destediteddata(ele);
-    // })
-    // destdeleteb.addEventListener("click",function(){
-    //     destdeletefn(ele.id);
-    // })
-    destedit.append(desteditb);
-    destbutton.append(destdeleteb);
-    drow.append(destid,destlocation,destcapital,destimg,destedit,destbutton);
-        return drow;
-    }
+closebtn.addEventListener("click",function(){
+  sideMenu.style.display='none';
+})
