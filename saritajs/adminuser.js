@@ -105,8 +105,7 @@ else if(flag==0){
         rightsection.style.display="none";
         flag=1;
         console.log(flag);
-}
-}
+}}
 let p=1;
 
 
@@ -129,11 +128,11 @@ function editeddata(ele){
         editgender.value=ele.gender;
         p=0;
     }
-    // else if(p==0){
-    //     maincont.style.gridTemplateColumns = "12rem auto";
-    //     rightsection.style.display="none";
-    //     p=1;
-    // }  
+    else if(p==0){
+        maincont.style.gridTemplateColumns = "12rem auto";
+        rightsection.style.display="none";
+        p=1;
+    }  
 }
 
 let newdatabtn=document.getElementById("newdatabtn");

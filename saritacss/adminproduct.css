@@ -407,10 +407,21 @@ aside .sidebar h3{
 aside .sidebar a{
  width:5.6rem;  
 }
+
+.analyse{
+    width: 100%;
+}
+ main .new-users .users-list .user{
+    flex-basis: 95%;
+} 
+/* .right-section{
+    display: none;
+ }  */
 main .analyse{
    grid-template-columns: 1fr;
    gap: 0; 
 }
+
 main .new-users .user-list .user{
   flex-basis: 40%;  
 }
@@ -422,7 +433,7 @@ main .recent-orders{
     margin: 2rem 0 0 0.8rem;
 }
 main .recent-orders table{
-    width: 70vw;
+    width: 95vw;
 }
 }
 @media only screen and (max-width:750px){
@@ -474,7 +485,7 @@ main .recent-orders table{
         padding: 0 1rem;
     }
     main .new-users .users-list .user{
-        flex-basis: 35%;
+        flex-basis: 55%;
     }
     main .recent-orders{
         width: 94%;
