@@ -3,7 +3,7 @@ import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 let LS = localStorage.getItem("bookingData");
 
 let destination = document.querySelector("#location");
-let price = document.querySelector("#plan")
+let price = document.querySelector("#plan");
 
 if (LS == null) {
     LS = [];
