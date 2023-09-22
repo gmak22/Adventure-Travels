@@ -10,6 +10,6 @@ The Adventure Travels is the website name of our project and it is a website whe
 2. CSS
 3. JAVASCRIPT
 
-# deployment
+# Deployment
 
 https://capable-custard-882ec2.netlify.app/
