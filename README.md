@@ -16,8 +16,34 @@ Welcome to our Destinations page, where your adventure begins! Dive into the ric
 
 
 ## Booking Page
-![Logo]()
 
+Once you selected your favourite destination you have to fill basic details before checkout.
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jtini894iaklw8431a4q.png)
+
+## Checkout Page
+
+On this page you can put your card detials to proceed your booking. Once you have enter your correct card details.
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/krivpsn90i85p1g9k3jx.png)
+
+## Booking Successful
+
+Once your bookig is successful you will get successful msessage on screen.
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ehdkq5g6msmd4oa7vujr.png)
 
 ## Tech Stacks Used
+
+### HTML5
+
+### CSS3
+
+### JavaScript
+
+## Deployment
+
+### Vercel
+https://adventure-travels-one.vercel.app
+
 
