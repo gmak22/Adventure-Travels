@@ -29,7 +29,7 @@ On this page you can put your card detials to proceed your booking. Once you hav
 
 ## Booking Successful
 
-Once your bookig is successful you will get successful msessage on screen.
+Once your booking is successful you will get successful msessage on screen.
 
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ehdkq5g6msmd4oa7vujr.png)
 
